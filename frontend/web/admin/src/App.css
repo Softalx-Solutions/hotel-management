@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    font-family: Roboto;
+}
+
+.App {
+    display: flex;
+    flex: 1;
+    /* background-color: red; */
+    height: calc(100vh - 2rem);
+}
