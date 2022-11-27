@@ -9,14 +9,20 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import { useSwitch } from "@mui/base";
+import { Dashboard } from "@mui/icons-material";
+import { IconButton } from "@mui/material";
 
-function SideBar({toggle=null, isOpen=false}) {
-
+function SideBar({ toggle = null, isOpen = false }) {
   return (
-    <Drawer onClose={()=>toggle(false)} anchor="left" open={isOpen}>
-      <Divider/>
+    <Drawer onClose={() => toggle(false)} anchor="left" open={isOpen}>
+      <IconButton>
+        <Dashboard />
+      </IconButton>
+      <Divider />
+      <IconButton>
+        <Dashboard />
+      </IconButton>
+      <Divider />
     </Drawer>
   );
 }

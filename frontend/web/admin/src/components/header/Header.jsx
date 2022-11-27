@@ -3,27 +3,22 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-// import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import { Notifications } from "@mui/icons-material";
+import { Notifications, Language } from "@mui/icons-material";
 import Avatar from "@mui/material/Avatar";
-import Stack from "@mui/material/Stack";
-import Badge from "@mui/material/Badge";
+import {Badge} from "@mui/material";
 
 import "./Header.css";
 
 export default function Header({ isOpen, toggle }) {
   return (
-    <Box className="container">
+    <div className="container">
       <Typography className="brand" color="purple" variant="h6">
         Admin Panel
       </Typography>
       <Toolbar>
         <IconButton>
-          <Notifications className="icons" color="#d5d5d5" />
-        </IconButton>
-        <IconButton>
-          <Notifications className="icons" color="#d5d5d5" />
+          <Language className="icons" color="#d5d5d5" />
         </IconButton>
         <Badge overlap='circular' badgeContent={1} color="error">
           <IconButton>
@@ -34,6 +29,6 @@ export default function Header({ isOpen, toggle }) {
           <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
         </IconButton>
       </Toolbar>
-    </Box>
+    </div>
   );
 }

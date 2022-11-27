@@ -6,6 +6,20 @@
 .App {
     display: flex;
     flex: 1;
+    flex-direction: column;
     /* background-color: red; */
     height: calc(100vh - 2rem);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.main {
+    flex: 4;
+}
+
+.sidebar {
+    flex: 1;
 }
