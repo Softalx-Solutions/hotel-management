@@ -1,21 +1,15 @@
-import "./App.css";
-import { Admin, Resource, ListGuesser, CustomRoutes } from "react-admin";
-import jsonServerProvider from "ra-data-json-server";
-import { Route } from "react-router-dom";
-import {UserList} from './data'
-import { Settings } from "./pages";
+import { Header, SideBar } from "./components";
 
-const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");
-
-
-const App = () => (
-  <Admin dataProvider={dataProvider}>
-    <Resource name="users" list={UserList} />
-    {/* <Resource name="posts" list={ListGuesser} /> */}
-    <CustomRoutes>
-      <Route path="/settings" element={<Settings />} />
-    </CustomRoutes>
-  </Admin>
-);
+const App = () => {
+  return (
+    <div className="h-screen bg-white">
+      <Header />
+      <div className="grid grid-cols-12">
+        <SideBar />
+        <main className="bg-red-600 col-span-10">main</main>
+      </div>
+    </div>
+  );
+};
 
 export default App;
