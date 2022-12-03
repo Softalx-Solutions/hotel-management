@@ -1,13 +1,11 @@
-import { Header, SideBar } from "./components";
+import { Header, NavBar, Main } from "./components";
+
 
 const App = () => {
   return (
-    <div className="h-screen bg-white">
-      <Header />
-      <div className="grid grid-cols-12">
-        <SideBar />
-        <main className="bg-red-600 col-span-10">main</main>
-      </div>
+    <div className="h-screen bg-[#F7F8FC] grid grid-cols-4">
+      <NavBar/>
+      <Main/>
     </div>
   );
 };
