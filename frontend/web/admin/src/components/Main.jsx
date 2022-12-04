@@ -4,7 +4,8 @@ import {Header} from './'
 function Main() {
   return (
     <div className='col-span-3'>
-      <Header title='overview' />
+      main
+      {/* <Header title='overview' /> */}
     </div>
   )
 }
