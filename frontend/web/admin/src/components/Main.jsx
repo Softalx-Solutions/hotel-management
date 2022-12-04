@@ -1,8 +1,11 @@
 import React from 'react'
+import {Header} from './'
 
 function Main() {
   return (
-    <div>Main</div>
+    <div className='col-span-3'>
+      <Header title='overview' />
+    </div>
   )
 }
 
