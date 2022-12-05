@@ -1,11 +1,11 @@
 import React from 'react'
 import {Header} from './'
 
-function Main() {
+function Main({isMenuOpen}) {
   return (
-    <div className='col-span-3'>
-      main
-      {/* <Header title='overview' /> */}
+    // <div>
+    <div className={`${isMenuOpen && "hidden sm:flex sm:flex-col"}`}>
+      <Header title='overview' />
     </div>
   )
 }

@@ -10,7 +10,7 @@ function Header({ title }) {
     <div className=" w-full capitalize  py-4 px-4 flex items-center justify-between">
       {/* Title */}
       <h1 className="text-[#4a4d5c] text-xl font-bold">{title}</h1>
-      <div className="flex items-center text-[#5d6175]">
+      {/* <div className="flex items-center text-[#5d6175]">
         <div className="flex items-center">
           <BellIcon  className="w-6 mx-2" />
           <GlobeAltIcon  className="w-6 mx-2" />
@@ -21,7 +21,7 @@ function Header({ title }) {
             <img src={userLogo} alt="Oke Edafe Great" />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
