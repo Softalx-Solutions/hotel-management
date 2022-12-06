@@ -20,3 +20,7 @@ or
     yarn dev
 
 to start the development server...
+
+## Preview
+
+A live version is available at [Admin](softalx-hotel-admin.netlify.app)
