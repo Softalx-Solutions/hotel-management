@@ -6,3 +6,7 @@
     padding: 0px;
     max-width: 100%;
 }
+
+.card {
+    @apply rounded-xl shadow-lg
+}

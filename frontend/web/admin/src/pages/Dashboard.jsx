@@ -1,80 +1,93 @@
+import { Chart } from "../components";
+import { hotels } from "../data";
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+
+const data = [
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    name: "Page B",
+    uv: 3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    name: "Page C",
+    uv: 2000,
+    pv: 9800,
+    amt: 2290,
+  },
+  {
+    name: "Page D",
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    name: "Page E",
+    uv: 1890,
+    pv: 4800,
+    amt: 2181,
+  },
+  {
+    name: "Page F",
+    uv: 2390,
+    pv: 3800,
+    amt: 2500,
+  },
+  {
+    name: "Page G",
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
+];
+
 export default function Dashboard() {
-    return (
-        <>
-            <div className="bg-light-blue-500 px-3 md:px-8 h-40" />
-
-            <div className="px-3 md:px-8 -mt-24">
-                <div className="container mx-auto max-w-full">
-                    <div className="grid grid-cols-1 xl:grid-cols-5">
-                        <div className="xl:col-start-1 xl:col-end-4 px-4 mb-14">
-Chart                            {/* <ChartLine /> */}
-                        </div>
-                        <div className="xl:col-start-4 xl:col-end-6 px-4 mb-14">
-                            {/* <ChartBar /> */}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="px-3 md:px-8">
-                <div className="container mx-auto max-w-full">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 mb-4">
-                        {/* <StatusCard
-                            color="pink"
-                            icon="trending_up"
-                            title="Traffic"
-                            amount="350,897"
-                            percentage="3.48"
-                            percentageIcon="arrow_upward"
-                            percentageColor="green"
-                            date="Since last month"
-                        />
-                        <StatusCard
-                            color="orange"
-                            icon="groups"
-                            title="New Users"
-                            amount="2,356"
-                            percentage="3.48"
-                            percentageIcon="arrow_downward"
-                            percentageColor="red"
-                            date="Since last week"
-                        />
-                        <StatusCard
-                            color="purple"
-                            icon="paid"
-                            title="Sales"
-                            amount="924"
-                            percentage="1.10"
-                            percentageIcon="arrow_downward"
-                            percentageColor="orange"
-                            date="Since yesterday"
-                        />
-                        <StatusCard
-                            color="blue"
-                            icon="poll"
-                            title="Performance"
-                            amount="49,65%"
-                            percentage="12"
-                            percentageIcon="arrow_upward"
-                            percentageColor="green"
-                            date="Since last month"
-                        /> */}
-                    </div>
-                </div>
-            </div>
-
-            <div className="px-3 md:px-8 h-auto">
-                <div className="container mx-auto max-w-full">
-                    <div className="grid grid-cols-1 xl:grid-cols-5">
-                        <div className="xl:col-start-1 xl:col-end-4 px-4 mb-14">
-                            {/* <PageVisitsCard /> */}
-                        </div>
-                        <div className="xl:col-start-4 xl:col-end-6 px-4 mb-14">
-                            {/* <TrafficCard /> */}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div className="h-72 flex flex- flex-wrap basis-3 bg-white">
+        {hotels.map((hotel) => (
+          <div className="card m-4 flex-1 flex">
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart
+                width={500}
+                height={400}
+                data={data}
+                margin={{
+                  top: 10,
+                  right: 30,
+                  left: 0,
+                  bottom: 0,
+                }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Area
+                  type="monotone"
+                  dataKey="uv"
+                  stroke="#8884d8"
+                  fill="#8884d8"
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }

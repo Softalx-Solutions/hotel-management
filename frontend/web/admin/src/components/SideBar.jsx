@@ -13,7 +13,7 @@ export default function Sidebar() {
     <>
       <NavBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
       <div
-        className={`h-screen fixed top-0 md:left-0 ${showSidebar} overflow-y-auto flex-row flex-nowrap overflow-hidden shadow-xl bg-dark w-64 z-10  transition-all duration-300`}//py-4 px-6
+        className={`h-screen fixed top-0 md:left-0 ${showSidebar} overflow-y-auto flex-row flex-nowrap overflow-hidden shadow-xl bg-dark w-64 z-10  transition-all duration-300`} //py-4 px-6
       >
         <div className="flex-col items-stretch min-h-full flex-nowrap px-0 relative">
           {/* Brand Start */}
@@ -31,14 +31,15 @@ export default function Sidebar() {
 
             <ul className="flex-col min-w-full flex list-none mt-8">
               {links.map((link) => (
-                <li className="w-full rounded-lg mb-4">
+                <li key={link.id} className="w-full rounded-lg mb-4">
                   <NavLink
+                    
                     to={`${
                       link.title.toLowerCase() === "dashboard"
                         ? "/"
                         : link.title.toLowerCase()
                     }`}
-                    exact
+                    // exact={true}
                     onClick={() => setShowSidebar("-left-64")}
                     className={({ isActive, isPending }) =>
                       isActive
