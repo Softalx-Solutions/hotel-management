@@ -1,5 +1,7 @@
 # Hotel-admin
 
+![background.png](background.png "back")
+
 Hotel management admin web app built on react.
 
 ## Installation
