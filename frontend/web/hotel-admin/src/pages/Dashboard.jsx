@@ -73,17 +73,17 @@ function Dashboard() {
               {/* Line chart (Acme Professional) */}
               <DashboardCard03 />
               {/* Bar chart (Direct vs Indirect) */}
-              <DashboardCard04 />
+              {/* <DashboardCard04 /> */}
               {/* Line chart (Real Time Value) */}
-              <DashboardCard05 />
+              {/* <DashboardCard05 /> */}
               {/* Doughnut chart (Top Countries) */}
-              <DashboardCard06 />
+              {/* <DashboardCard06 /> */}
               {/* Table (Top Channels) */}
-              <DashboardCard07 />
+              {/* <DashboardCard07 /> */}
               {/* Line chart (Sales Over Time) */}
-              <DashboardCard08 />
+              {/* <DashboardCard08 /> */}
               {/* Stacked bar chart (Sales VS Refunds) */}
-              <DashboardCard09 />
+              {/* <DashboardCard09 /> */}
               {/* Card (Recent Activity) */}
               <DashboardCard10 />
               {/* Card (Income/Expenses) */}
