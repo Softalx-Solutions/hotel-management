@@ -4,13 +4,6 @@ import Sidebar from '../partials/Sidebar';
 import Header from '../partials/Header';
 import Datepicker from '../components/Datepicker';
 import AnalyticsCard01 from '../partials/analytics/AnalyticsCard01';
-import AnalyticsCard02 from '../partials/analytics/AnalyticsCard02';
-import AnalyticsCard03 from '../partials/analytics/AnalyticsCard03';
-import AnalyticsCard04 from '../partials/analytics/AnalyticsCard04';
-import AnalyticsCard05 from '../partials/analytics/AnalyticsCard05';
-import AnalyticsCard06 from '../partials/analytics/AnalyticsCard06';
-import AnalyticsCard07 from '../partials/analytics/AnalyticsCard07';
-import AnalyticsCard08 from '../partials/analytics/AnalyticsCard08';
 import AnalyticsCard09 from '../partials/analytics/AnalyticsCard09';
 import AnalyticsCard10 from '../partials/analytics/AnalyticsCard10';
 import AnalyticsCard11 from '../partials/analytics/AnalyticsCard11';
@@ -54,32 +47,15 @@ function Analytics() {
             
             {/* Cards */}
             <div className="grid grid-cols-12 gap-6">
-
               {/* Line chart (Analytics) */}
               <AnalyticsCard01 />
-              {/*  Line chart (Active Users Right Now) */}
-              <AnalyticsCard02 />
-              {/* Stacked bar chart (Acquisition Channels) */}
-              <AnalyticsCard03 />
-              {/* Horizontal bar chart (Audience Overview) */}
-              <AnalyticsCard04 />
-              {/* Report card (Top Channels) */}
-              <AnalyticsCard05 />
-              {/* Report card (Top Pages) */}
-              <AnalyticsCard06 />
-              {/* Report card (Top Countries) */}
-              <AnalyticsCard07 />
-              {/* Doughnut chart (Sessions By Device) */}
-              <AnalyticsCard08 />
-              {/* Doughnut chart (Visit By Age Category) */}
+              {/* Doughnut chart (Bookings By Device) */}
               <AnalyticsCard09 />
-              {/* Polar chart (Sessions By Gender) */}
+              {/* Polar chart (Bookings By Gender) */}
               <AnalyticsCard10 />
-              {/* Table (Top Products) */}
+              {/* Table (Recent Bookings) */}
               <AnalyticsCard11 />
-
             </div>
-
           </div>
         </main>
 
