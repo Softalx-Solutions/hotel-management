@@ -23,7 +23,7 @@ function AnalyticsCard01() {
       {
         label: 'Current',
         data: [
-          5000, 8700, 7500, 12000, 11000, 9500, 10500,
+          5000, 9700, 7500, 12000, 11000, 9500, 10500,
           10000, 15000, 9000, 10000, 7000, 22000, 7200,
           9800, 9000, 10000, 8000, 15000, 12000, 11000,
           13000, 11000, 15000, 17000, 18000,
@@ -70,10 +70,10 @@ function AnalyticsCard01() {
           <div className="flex items-center py-2">
             <div className="mr-5">
               <div className="flex items-center">
-                <div className="text-3xl font-bold text-slate-800 mr-2">24.7K</div>
+                <div className="text-3xl font-bold text-slate-800 mr-2">824.75K</div>
                 <div className="text-sm font-medium text-emerald-500">+49%</div>
               </div>
-              <div className="text-sm text-slate-500">Unique Visitors</div>
+              <div className="text-sm text-slate-500">Todays Balance</div>
             </div>
             <div className="hidden md:block w-px h-8 bg-slate-200 mr-5" aria-hidden="true"></div>
           </div>
@@ -81,33 +81,23 @@ function AnalyticsCard01() {
           <div className="flex items-center py-2">
             <div className="mr-5">
               <div className="flex items-center">
-                <div className="text-3xl font-bold text-slate-800 mr-2">56.9K</div>
+                <div className="text-3xl font-bold text-slate-800 mr-2">2.11M</div>
                 <div className="text-sm font-medium text-emerald-500">+7%</div>
               </div>
-              <div className="text-sm text-slate-500">Total Pageviews</div>
+              <div className="text-sm text-slate-500">Yesterday Balance</div>
             </div>
             <div className="hidden md:block w-px h-8 bg-slate-200 mr-5" aria-hidden="true"></div>
           </div>
-          {/* Bounce Rate */}
+          {/* Average Rate */}
           <div className="flex items-center py-2">
             <div className="mr-5">
               <div className="flex items-center">
                 <div className="text-3xl font-bold text-slate-800 mr-2">54%</div>
                 <div className="text-sm font-medium text-amber-500">-7%</div>
               </div>
-              <div className="text-sm text-slate-500">Bounce Rate</div>
+              <div className="text-sm text-slate-500">Average Rating</div>
             </div>
             <div className="hidden md:block w-px h-8 bg-slate-200 mr-5" aria-hidden="true"></div>
-          </div>
-          {/* Visit Duration*/}
-          <div className="flex items-center">
-            <div>
-              <div className="flex items-center">
-                <div className="text-3xl font-bold text-slate-800 mr-2">2m 56s</div>
-                <div className="text-sm font-medium text-amber-500">+7%</div>
-              </div>
-              <div className="text-sm text-slate-500">Visit Duration</div>
-            </div>
           </div>
         </div>
       </div>
