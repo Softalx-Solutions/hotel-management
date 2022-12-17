@@ -81,7 +81,7 @@ function AnalyticsCard01() {
           <div className="flex items-center py-2">
             <div className="mr-5">
               <div className="flex items-center">
-                <div className="text-3xl font-bold text-slate-800 mr-2">2.11M</div>
+                <div className="text-3xl font-bold text-slate-800 mr-2">2.1M</div>
                 <div className="text-sm font-medium text-emerald-500">+7%</div>
               </div>
               <div className="text-sm text-slate-500">Yesterday Balance</div>
