@@ -14,7 +14,6 @@ import Account from './pages/settings/Account';
 import Notifications from './pages/settings/Notifications';
 import Feedback from './pages/settings/Feedback';
 import PageNotFound from './pages/utility/PageNotFound';
-import KnowledgeBase from './Home';
 import Signin from './pages/Signin';
 import ButtonPage from './pages/component/ButtonPage';
 import FormPage from './pages/component/FormPage';
@@ -44,7 +43,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route exact path="/" element={<Signin />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/settings" element={<Account />} />
         <Route path="/settings/account" element={<Account />} />
