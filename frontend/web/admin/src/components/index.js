@@ -3,6 +3,7 @@ import SideBar from "./SideBar";
 import NavBar from "./NavBar";
 import Main from "./Main";
 import Chart from "./Chart";
+import Card from "./Card";
 
 export {
     Header,
@@ -10,4 +11,5 @@ export {
     NavBar,
     Main,
     Chart,
+    Card,
 };
