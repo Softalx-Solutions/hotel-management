@@ -1,15 +1,15 @@
-# Hotel-admin
+# Hotel-Reception
 
-![background.png](background.png "back")
+![home.png](home.png "Front")
 
-Hotel management admin web app built on react.
+Hotel management reception web app built on react.
 
 ## Installation
 
 To run the app locally, clone the github repo
 
     git clone https://github.com/Softalx-Solutions/hotel-management.git
-    cd hotel-management/frontend/web/hotel-admin
+    cd hotel-management/frontend/web/hotel-reception
 
 then
 

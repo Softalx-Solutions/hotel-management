@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
+import HotelCard from './pages/component/HotelCard'
 import Header from './partials/Header';
 
 function Home() {
@@ -99,13 +101,13 @@ function Home() {
 
             {/* Sections */}
             <div className="space-y-8">
-
+                <h3 className="text-xl text-slate-800 font-bold">Quick Actions</h3>
               <div >
                
                 {/* Grid */}
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 lg:sidebar-expanded:grid-cols-2 xl:sidebar-expanded:grid-cols-4 gap-6">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 lg:sidebar-expanded:grid-cols-2 xl:sidebar-expanded:grid-cols-3 gap-6">
                   
-                  {/* Item */}
+                  {/* Item  QR-Code*/}
                   <div className="bg-slate-100 rounded-sm text-center p-5">
                     <div className="flex flex-col h-full">
                       <div className="grow mb-2">
@@ -145,7 +147,7 @@ function Home() {
                     </div>
                   </div>
                   
-                  {/* Item */}
+                  {/* Item New-Booking*/}
                   <div className="bg-slate-100 rounded-sm text-center p-5">
                     <div className="flex flex-col h-full">
                       <div className="grow mb-2">
@@ -177,9 +179,9 @@ function Home() {
                       </div>
                       {/* Link */}
                       <div>
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                        <Link to="/new-booking" className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
                           Explore -&gt;
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -218,107 +220,28 @@ function Home() {
                     </div>
                   </div>
                   
-                  {/* Item */}
-                  <div className="bg-slate-100 rounded-sm text-center p-5">
-                    <div className="flex flex-col h-full">
-                      <div className="grow mb-2">
-                        {/* Icon */}
-                        <div className="inline-flex w-12 h-12 rounded-full bg-indigo-400">
-                          <svg className="w-12 h-12" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                              <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="icon4-a">
-                                <stop stopColor="#FFF" offset="0%" />
-                                <stop stopColor="#A5B4FC" offset="100%" />
-                              </linearGradient>
-                            </defs>
-                            <g fillRule="nonzero" fill="none">
-                              <path
-                                d="M34.327 18.194H10.12c-.495 0-.897.358-.897.798v14.404c0 .44.402.798.897.798h24.207c.495 0 .896-.357.896-.798V18.992c0-.44-.401-.798-.896-.798Z"
-                                fill="#4F46E5"
-                                opacity=".88"
-                              />
-                              <path
-                                d="M29.09 0H4.883c-.494 0-.896.357-.896.798v14.404c0 .44.402.798.896.798H29.09c.495 0 .897-.357.897-.798V.798c0-.44-.402-.798-.897-.798Z"
-                                fill="url(#icon4-a)"
-                                transform="rotate(-8 126.748 -40.297)"
-                              />
-                              <path d="M25.194 25.777a3 3 0 1 1-.835-5.942 3 3 0 0 1 .835 5.942Z" fill="#6366F1" opacity=".72" />
-                            </g>
-                          </svg>
-                        </div>
-                        {/* Content */}
-                        <h3 className="text-lg font-semibold text-slate-800 mb-1">Billing &amp; Invoices</h3>
-                        <div className="text-sm">Lorem ipsum dolor sit consectetur adipiscing elit sed do.</div>
-                      </div>
-                      {/* Link */}
-                      <div>
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
-                          Explore -&gt;
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  
                 </div>
               </div>
 
               {/* Popular Guides */}
               <div>
                 <div className="mb-5">
-                  <h2 className="text-xl text-slate-800 font-bold">Popular Guides</h2>
+                  <h2 className="text-xl text-slate-800 font-bold">Available Rooms</h2>
                 </div>
                 {/* Grid */}
                 <div className="grid sm:grid-cols-2 gap-6">
                   
                   {/* Item */}
-                  <div className="w-full p-3 rounded-sm text bg-white border border-slate-200">
+                  {/* <div className="w-full p-3 rounded-sm text bg-white border border-slate-200"> */}
                     <div className="flex h-full">
-                      {/* Icon */}
-                      <svg className="w-4 h-4 shrink-0 fill-indigo-400 mt-[3px] mr-3" viewBox="0 0 16 16">
-                        <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm1 12H7V7h2v5zM8 6c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z" />
-                      </svg>
-                      <div className="flex flex-col h-full">
-                        {/* Content */}
-                        <div className="grow mb-2">
-                          <div className="font-semibold text-slate-800 mb-1">Documents For Business Verification</div>
-                          <div className="text-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing sed do eiusmod tempor incididunt ut labore et dolore.
-                          </div>
-                        </div>
-                        {/* Link */}
-                        <div>
-                          <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
-                            View -&gt;
-                          </a>
-                        </div>
-                      </div>
+                     
+                      <HotelCard />
+                   
                     </div>
-                  </div>
+                  {/* </div> */}
                   
                   {/* Item */}
-                  <div className="w-full p-3 rounded-sm text bg-white border border-slate-200">
-                    <div className="flex h-full">
-                      {/* Icon */}
-                      <svg className="w-4 h-4 shrink-0 fill-indigo-400 mt-[3px] mr-3" viewBox="0 0 16 16">
-                        <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm1 12H7V7h2v5zM8 6c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z" />
-                      </svg>
-                      <div className="flex flex-col h-full">
-                        {/* Content */}
-                        <div className="grow mb-2">
-                          <div className="font-semibold text-slate-800 mb-1">Delayed Or Missing Payouts</div>
-                          <div className="text-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing sed do eiusmod tempor incididunt ut labore et dolore.
-                          </div>
-                        </div>
-                        {/* Link */}
-                        <div>
-                          <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
-                            View -&gt;
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                 
                   
                 </div>
               </div>

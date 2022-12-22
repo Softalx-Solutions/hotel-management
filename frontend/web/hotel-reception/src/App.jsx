@@ -9,27 +9,26 @@ import './css/style.css';
 
 
 // Import pages
-import Calendar from './pages/Calendar';
 import Account from './pages/settings/Account';
 import Notifications from './pages/settings/Notifications';
 import Feedback from './pages/settings/Feedback';
 import PageNotFound from './pages/utility/PageNotFound';
-import KnowledgeBase from './Home';
 import Signin from './pages/Signin';
 import ButtonPage from './pages/component/ButtonPage';
 import FormPage from './pages/component/FormPage';
 import DropdownPage from './pages/component/DropdownPage';
 import AlertPage from './pages/component/AlertPage';
 import ModalPage from './pages/component/ModalPage';
-import PaginationPage from './pages/component/PaginationPage';
 import TabsPage from './pages/component/TabsPage';
 import BreadcrumbPage from './pages/component/BreadcrumbPage';
 import BadgePage from './pages/component/BadgePage';
+import PreviewInvoice from './pages/PreviewInvoice';
 import AvatarPage from './pages/component/AvatarPage';
 import TooltipPage from './pages/component/TooltipPage';
 import AccordionPage from './pages/component/AccordionPage';
-import IconsPage from './pages/component/IconsPage';
 import Home from './Home';
+import NewBooking from './pages/component/NewBooking';
+import OrderSuccess from './partials/OrderSuccess';
 
 function App() {
 
@@ -44,8 +43,8 @@ function App() {
   return (
     <>
       <Routes>
-        <Route exact path="/" element={<Signin />} />
-        <Route path="/calendar" element={<Calendar />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/new-booking" element={<NewBooking />} />
         <Route path="/settings" element={<Account />} />
         <Route path="/settings/account" element={<Account />} />
         <Route path="/settings/notifications" element={<Notifications />} />
@@ -58,14 +57,14 @@ function App() {
         <Route path="/component/dropdown" element={<DropdownPage />} />
         <Route path="/component/alert" element={<AlertPage />} />
         <Route path="/component/modal" element={<ModalPage />} />
-        <Route path="/component/pagination" element={<PaginationPage />} />
+        <Route path="/preview-invoice" element={<PreviewInvoice />} />
         <Route path="/component/tabs" element={<TabsPage />} />
         <Route path="/component/breadcrumb" element={<BreadcrumbPage />} />
         <Route path="/component/badge" element={<BadgePage />} />
         <Route path="/component/avatar" element={<AvatarPage />} />
         <Route path="/component/tooltip" element={<TooltipPage />} />
         <Route path="/component/accordion" element={<AccordionPage />} />
-        <Route path="/component/icons" element={<IconsPage />} />
+        <Route path="/new-booking/order-success" element={<OrderSuccess />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
