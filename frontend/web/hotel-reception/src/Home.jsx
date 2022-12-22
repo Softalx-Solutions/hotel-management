@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import HotelCard from './pages/component/HotelCard'
 import Header from './partials/Header';
@@ -106,7 +107,7 @@ function Home() {
                 {/* Grid */}
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 lg:sidebar-expanded:grid-cols-2 xl:sidebar-expanded:grid-cols-3 gap-6">
                   
-                  {/* Item */}
+                  {/* Item  QR-Code*/}
                   <div className="bg-slate-100 rounded-sm text-center p-5">
                     <div className="flex flex-col h-full">
                       <div className="grow mb-2">
@@ -146,7 +147,7 @@ function Home() {
                     </div>
                   </div>
                   
-                  {/* Item */}
+                  {/* Item New-Booking*/}
                   <div className="bg-slate-100 rounded-sm text-center p-5">
                     <div className="flex flex-col h-full">
                       <div className="grow mb-2">
@@ -178,9 +179,9 @@ function Home() {
                       </div>
                       {/* Link */}
                       <div>
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                        <Link to="/new-booking" className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
                           Explore -&gt;
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

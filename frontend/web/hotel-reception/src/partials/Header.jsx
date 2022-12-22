@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import UserMenu from '../components/DropdownProfile';
 
@@ -19,6 +20,7 @@ function Header({
           <div className="flex items-center space-x-3">
             
             {/*  Divider */}
+            <Link to="/" className="btn bg-indigo-500 hover:bg-indigo-600 text-white">Back To Dashboard</Link>
             <hr className="w-px h-6 bg-slate-200 mx-3" />
             <UserMenu align="right" />
 
