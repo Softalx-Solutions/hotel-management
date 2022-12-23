@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Datepicker from '../../components/Datepicker';
 
 
 import Header from '../../partials/Header';
@@ -51,7 +52,7 @@ function NewBooking() {
                   {/* Order details */}
                   <ul className="mb-4">
                     <li className="text-sm w-full flex justify-between py-3 border-b border-slate-200">
-                      <div>Room</div>
+                      <div>Room <span>x 1</span></div>
                       <div className="font-medium text-slate-800">$205</div>
                     </li>
                     <li className="text-sm w-full flex justify-between py-3 border-b border-slate-200">
@@ -68,16 +69,24 @@ function NewBooking() {
                     </li>
                   </ul>
                   {/* Promo box */}
-                  <div className="mb-6">
+                  {/* <div className="mb-6">
                     <div className="flex items-center justify-between">
                       <label className="block text-sm font-medium mb-1" htmlFor="promo">Promo Code</label>
                       <div className="text-sm text-slate-400 italic">optional</div>
                     </div>
                     <input id="promo" className="form-input w-full mb-2" type="text" />
                     <button className="btn w-full bg-indigo-500 hover:bg-indigo-600 text-white disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed shadow-none" disabled>Apply Code</button>
+                  </div> */}
+
+                  {/* booking date */}
+                  <div className="mb-6">
+                    <div className="flex items-center justify-between">
+                      <label className="block text-sm font-medium mb-1" htmlFor="promo">Booking Date/ Days (7)</label>
+                    </div>
+                    <Datepicker />
                   </div>
 
-                  {/* Promo box */}
+                  {/* Payment method*/}
                   <div className="mb-6">
                     <div className="flex items-center justify-between">
                       <label className="block text-sm font-medium mb-1" htmlFor="promo">Payment Method</label>

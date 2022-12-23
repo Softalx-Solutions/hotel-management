@@ -71,7 +71,7 @@ function OrderItem() {
         </li>
         {/* Cart item */}
         <li className="sm:flex items-center py-6 border-b border-slate-200">
-         <HotelCard />
+          <HotelCard />
         </li>
       </ul>
 
