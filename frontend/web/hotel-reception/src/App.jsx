@@ -27,7 +27,7 @@ import AvatarPage from './pages/component/AvatarPage';
 import TooltipPage from './pages/component/TooltipPage';
 import AccordionPage from './pages/component/AccordionPage';
 import Home from './Home';
-import NewBooking from './pages/component/NewBooking';
+import NewReservation from './pages/component/NewReservation';
 import OrderSuccess from './partials/OrderSuccess';
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
     <>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/new-booking" element={<NewBooking />} />
+        <Route path="/new-reservation" element={<NewReservation />} />
         <Route path="/settings" element={<Account />} />
         <Route path="/settings/account" element={<Account />} />
         <Route path="/settings/notifications" element={<Notifications />} />
@@ -64,7 +64,7 @@ function App() {
         <Route path="/component/avatar" element={<AvatarPage />} />
         <Route path="/component/tooltip" element={<TooltipPage />} />
         <Route path="/component/accordion" element={<AccordionPage />} />
-        <Route path="/new-booking/order-success" element={<OrderSuccess />} />
+        <Route path="/new-reservation/order-success" element={<OrderSuccess />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>

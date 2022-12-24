@@ -1,20 +1,24 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Transition from '../../utils/Transition';
 
-function OrderDropdown() {
+function RoomType() {
 
   const options = [
     {
       id: 0,
-      period: '------- select -------'
+      period: 'Standard Suites'
     },
     {
       id: 1,
-      period: 'POS'
+      period: 'Royal Suites'
     },
     {
       id: 2,
-      period: 'CASH'
+      period: 'Luxury Suites'
+    },
+    {
+      id: 3,
+      period: 'Executive Suites'
     }
   ];
 
@@ -102,4 +106,4 @@ function OrderDropdown() {
   );
 }
 
-export default OrderDropdown;
+export default RoomType;

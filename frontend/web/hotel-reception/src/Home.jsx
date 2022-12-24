@@ -108,7 +108,7 @@ function Home() {
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 lg:sidebar-expanded:grid-cols-2 xl:sidebar-expanded:grid-cols-3 gap-6">
                   
                   {/* Item  QR-Code*/}
-                  <Link to="#/new-booking">
+                  <Link to="#/new-reservation">
                     <div className="bg-slate-100 rounded-sm text-center p-5">
                       <div className="flex flex-col h-full">
                         <div className="grow mb-2">
@@ -139,11 +139,10 @@ function Home() {
                           <h3 className="text-lg font-semibold text-slate-800 mb-1">Scan QR Code</h3>
                           <div className="text-sm">Scan slip or phone to lodge customer.</div>
                         </div>
-                        {/* Link */}
                         <div>
-                          <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                          <div className="text-sm font-medium text-indigo-500 hover:text-indigo-600">
                             Explore -&gt;
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -151,7 +150,7 @@ function Home() {
 
                   
                   {/* Item New-Booking*/}
-                  <Link to="/new-booking">
+                  <Link to="/new-reservation">
                     <div className="bg-slate-100 rounded-sm text-center p-5">
                       <div className="flex flex-col h-full">
                         <div className="grow mb-2">
@@ -178,21 +177,20 @@ function Home() {
                             </svg>
                           </div>
                           {/* Content */}
-                          <h3 className="text-lg font-semibold text-slate-800 mb-1">Make new Booking</h3>
-                          <div className="text-sm">Book room for client on site.</div>
+                          <h3 className="text-lg font-semibold text-slate-800 mb-1">New Reservation</h3>
+                          <div className="text-sm">Reserve room for client on site.</div>
                         </div>
-                        {/* Link */}
                         <div>
-                          <Link to="/new-booking" className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                          <div className="text-sm font-medium text-indigo-500 hover:text-indigo-600">
                             Explore -&gt;
-                          </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </Link>
                   
                   {/* Item */}
-                  <Link to="#/new-booking">
+                  <Link to="#/new-reservation">
                     <div className="bg-slate-100 rounded-sm text-center p-5">
                       <div className="flex flex-col h-full">
                         <div className="grow mb-2">
@@ -214,14 +212,13 @@ function Home() {
                             </svg>
                           </div>
                           {/* Content */}
-                          <h3 className="text-lg font-semibold text-slate-800 mb-1">Apps &amp; Tools</h3>
-                          <div className="text-sm">Lorem ipsum dolor sit consectetur adipiscing elit sed do.</div>
+                          <h3 className="text-lg font-semibold text-slate-800 mb-1">View Reservations</h3>
+                          <div className="text-sm">View all Reservation.</div>
                         </div>
-                        {/* Link */}
                         <div>
-                          <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                          <div className="text-sm font-medium text-indigo-500 hover:text-indigo-600" >
                             Explore -&gt;
-                          </a>
+                          </div>
                         </div>
                       </div>
                     </div>

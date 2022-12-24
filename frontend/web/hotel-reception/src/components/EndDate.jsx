@@ -1,7 +1,7 @@
 import React from 'react';
 import Flatpickr from 'react-flatpickr';
 
-function Datepicker({
+function EndDate({
   align
 }) {
 
@@ -35,4 +35,4 @@ function Datepicker({
   );
 }
 
-export default Datepicker;
+export default EndDate;
