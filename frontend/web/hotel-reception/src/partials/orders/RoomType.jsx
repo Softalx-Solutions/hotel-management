@@ -53,7 +53,7 @@ function RoomType() {
     <div className="relative inline-flex w-full">
       <button
         ref={trigger}
-        className="btn w-full justify-between min-w-44 bg-white border-slate-200 hover:border-slate-300 text-slate-500 hover:text-slate-600"
+        className="btn w-full justify-between  bg-white border-slate-200 hover:border-slate-300 text-slate-500 hover:text-slate-600"
         aria-label="Select date range"
         aria-haspopup="true"
         onClick={() => setDropdownOpen(!dropdownOpen)}
