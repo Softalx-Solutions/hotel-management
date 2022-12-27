@@ -190,7 +190,7 @@ function Home() {
                   </Link>
                   
                   {/* Item */}
-                  <Link to="#/new-reservation">
+                  <Link to="/reservations">
                     <div className="bg-slate-100 rounded-sm text-center p-5">
                       <div className="flex flex-col h-full">
                         <div className="grow mb-2">
