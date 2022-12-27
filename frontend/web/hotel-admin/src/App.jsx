@@ -26,6 +26,7 @@ import Changelog from './pages/utility/Changelog';
 import Roadmap from './pages/utility/Roadmap';
 import Faqs from './pages/utility/Faqs';
 import EmptyState from './pages/utility/EmptyState';
+import Staff from './pages/staff/Staff';
 import PageNotFound from './pages/utility/PageNotFound';
 import KnowledgeBase from './pages/utility/KnowledgeBase';
 import Signin from './pages/Signin';
@@ -79,6 +80,7 @@ function App() {
         <Route path="/utility/roadmap" element={<Roadmap />} />
         <Route path="/utility/faqs" element={<Faqs />} />
         <Route path="/utility/empty-state" element={<EmptyState />} />
+        <Route path="/staff" element={<Staff />} />
         <Route path="/utility/404" element={<PageNotFound />} />
         <Route path="/utility/knowledge-base" element={<KnowledgeBase />} />
         <Route path="/signin" element={<Signin />} />

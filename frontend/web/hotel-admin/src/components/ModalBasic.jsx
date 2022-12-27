@@ -8,7 +8,6 @@ function ModalBasic({
   modalOpen,
   setModalOpen
 }) {
-
   const modalContent = useRef(null);
 
   // close on click outside
