@@ -14,20 +14,12 @@ function DateSelect() {
     },
     {
       id: 2,
-      period: 'Last Month'
-    },
-    {
-      id: 3,
-      period: 'Last 12 Months'
-    },
-    {
-      id: 4,
       period: 'All Time'
     }
   ];
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [selected, setSelected] = useState(2);
+  const [selected, setSelected] = useState(0);
 
   const trigger = useRef(null);
   const dropdown = useRef(null);
