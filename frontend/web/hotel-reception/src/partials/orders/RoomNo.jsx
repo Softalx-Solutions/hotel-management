@@ -1,20 +1,32 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Transition from '../../utils/Transition';
 
-function OrderDropdown() {
+function RoomNo() {
 
   const options = [
     {
       id: 0,
-      period: '------- select -------'
+      period: '106'
     },
     {
       id: 1,
-      period: 'POS'
+      period: '107'
     },
     {
       id: 2,
-      period: 'CASH'
+      period: '110'
+    },
+    {
+      id: 3,
+      period: '113'
+    },
+    {
+      id: 4,
+      period: '114'
+    },
+    {
+      id: 5,
+      period: '115'
     }
   ];
 
@@ -49,7 +61,7 @@ function OrderDropdown() {
     <div className="relative inline-flex w-full">
       <button
         ref={trigger}
-        className="btn w-full justify-between min-w-44 bg-white border-slate-200 hover:border-slate-300 text-slate-500 hover:text-slate-600"
+        className="btn w-full justify-between bg-white border-slate-200 hover:border-slate-300 text-slate-500 hover:text-slate-600"
         aria-label="Select date range"
         aria-haspopup="true"
         onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -102,4 +114,4 @@ function OrderDropdown() {
   );
 }
 
-export default OrderDropdown;
+export default RoomNo;

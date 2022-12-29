@@ -350,14 +350,18 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 }}
               </SidebarLinkGroup>
               {/* Staff */}
-              <SidebarLinkGroup activecondition={pathname.includes("staff")}>
+
+              <SidebarLinkGroup
+                activecondition={pathname.includes("staff")}
+              >
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
                       <a
-                        href="#0"
+                        href="/"
                         className={`block text-slate-200 hover:text-white truncate transition duration-150 ${
-                          pathname.includes("staff") && "hover:text-slate-200"
+                          pathname.includes("staff") &&
+                          "hover:text-slate-200"
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
@@ -370,36 +374,99 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <div className="flex items-center">
                             {/* <svg
                               className="shrink-0 h-6 w-6"
-                              viewBox="0 0 24 24"
+                              viewBox="0 0 64 64"
                             >
-                              <path
-                                className={`fill-current text-slate-600 ${
-                                  pathname.includes("staff") &&
-                                  "text-indigo-500"
-                                }`}
-                                d="M19.714 14.7l-7.007 7.007-1.414-1.414 7.007-7.007c-.195-.4-.298-.84-.3-1.286a3 3 0 113 3 2.969 2.969 0 01-1.286-.3z"
-                              />
-                              <path
+                              <g
                                 className={`fill-current text-slate-400 ${
                                   pathname.includes("staff") &&
-                                  "text-indigo-300"
+                                  "!text-indigo-500"
                                 }`}
-                                d="M10.714 18.3c.4-.195.84-.298 1.286-.3a3 3 0 11-3 3c.002-.446.105-.885.3-1.286l-6.007-6.007 1.414-1.414 6.007 6.007z"
-                              />
-                              <path
-                                className={`fill-current text-slate-600 ${
-                                  pathname.includes("staff") &&
-                                  "text-indigo-500"
-                                }`}
-                                d="M5.7 10.714c.195.4.298.84.3 1.286a3 3 0 11-3-3c.446.002.885.105 1.286.3l7.007-7.007 1.414 1.414L5.7 10.714z"
-                              />
-                              <path
-                                className={`fill-current text-slate-400 ${
-                                  pathname.includes("staff") &&
-                                  "text-indigo-300"
-                                }`}
-                                d="M19.707 9.292a3.012 3.012 0 00-1.415 1.415L13.286 5.7c-.4.195-.84.298-1.286.3a3 3 0 113-3 2.969 2.969 0 01-.3 1.286l5.007 5.006z"
-                              />
+                              >
+                                <rect
+                                  className={`fill-current text-slate-400 ${
+                                    pathname.includes("staff") &&
+                                    "!text-indigo-500"
+                                  }`}
+                                  x="3"
+                                  y="42"
+                                  width="10"
+                                  height="16"
+                                  rx="1"
+                                  fill="#212121"
+                                ></rect>
+                                <rect
+                                  className={`fill-current text-slate-400 ${
+                                    pathname.includes("staff") &&
+                                    "!text-indigo-500"
+                                  }`}
+                                  x="35"
+                                  y="42"
+                                  width="10"
+                                  height="16"
+                                  rx="1"
+                                  fill="#212121"
+                                ></rect>
+                                <rect
+                                  className={`fill-current text-slate-400 ${
+                                    pathname.includes("staff") &&
+                                    "!text-indigo-500"
+                                  }`}
+                                  x="19"
+                                  y="26"
+                                  width="10"
+                                  height="32"
+                                  rx="1"
+                                  fill="#212121"
+                                ></rect>
+                                <rect
+                                  className={`fill-current text-slate-400 ${
+                                    pathname.includes("staff") &&
+                                    "!text-indigo-500"
+                                  }`}
+                                  x="51"
+                                  y="26"
+                                  width="10"
+                                  height="32"
+                                  rx="1"
+                                  fill="#212121"
+                                ></rect>
+                                <path
+                                  className={`fill-current text-slate-400 ${
+                                    pathname.includes("staff") &&
+                                    "!text-white"
+                                  }`}
+                                  d="M18.4,15.184l-7.649,7.649a5.015,5.015,0,1,0,1.414,1.414L19.816,16.6A7.017,7.017,0,0,1,18.4,15.184Z"
+                                  // data-color="color-2"
+                                ></path>
+                                <circle
+                                  className={`fill-current text-slate-400 ${
+                                    pathname.includes("staff") &&
+                                    "!text-indigo-500"
+                                  }`}
+                                  cx="24"
+                                  cy="11"
+                                  r="5"
+                                  // data-color="color-2"
+                                ></circle>
+                                <path
+                                  className={`fill-current text-slate-400 ${
+                                    pathname.includes("staff") &&
+                                    "!text-white"
+                                  }`}
+                                  d="M50.4,15.184l-7.649,7.649a4.966,4.966,0,0,0-5.506,0L29.6,15.184A7.017,7.017,0,0,1,28.184,16.6l7.649,7.649a5,5,0,1,0,8.334,0L51.816,16.6A7.017,7.017,0,0,1,50.4,15.184Z"
+                                  // data-color="color-2"
+                                ></path>
+                                <circle
+                                  className={`fill-current text-slate-400 ${
+                                    pathname.includes("staff") &&
+                                    "!text-indigo-500"
+                                  }`}
+                                  cx="56"
+                                  cy="11"
+                                  r="5"
+                                  // data-color="color-2"
+                                ></circle>
+                              </g>
                             </svg> */}
                             <svg
                               className="shrink-0 h-7 w-7"
@@ -426,58 +493,28 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             </svg>
                             {/* svg end */}
                             <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                              Staff
+                              <NavLink
+                                end
+                                to="/staff"
+                                className={({ isActive }) =>
+                                  "block text-slate-400 hover:text-slate-200 transition duration-150 truncate " +
+                                  (isActive ? "!text-indigo-500" : "")
+                                }
+                              >
+                                <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                  Staff
+                                </span>
+                              </NavLink>
                             </span>
-                          </div>
-                          {/* Icon */}
-                          <div className="flex shrink-0 ml-2">
-                            <svg
-                              className={`w-3 h-3 shrink-0 ml-1 fill-current text-slate-400 ${
-                                open && "rotate-180"
-                              }`}
-                              viewBox="0 0 12 12"
-                            >
-                              <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
-                            </svg>
                           </div>
                         </div>
                       </a>
-                      <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
-                        <ul className={`pl-9 mt-1 ${!open && "hidden"}`}>
-                          <li className="mb-1 last:mb-0">
-                            <NavLink
-                              end
-                              to="/staff/new"
-                              className={({ isActive }) =>
-                                "block text-slate-400 hover:text-slate-200 transition duration-150 truncate " +
-                                (isActive ? "!text-indigo-500" : "")
-                              }
-                            >
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Add Staff
-                              </span>
-                            </NavLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
-                            <NavLink
-                              end
-                              to="/staff/view"
-                              className={({ isActive }) =>
-                                "block text-slate-400 hover:text-slate-200 transition duration-150 truncate " +
-                                (isActive ? "!text-indigo-500" : "")
-                              }
-                            >
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                All Staff
-                              </span>
-                            </NavLink>
-                          </li>
-                        </ul>
-                      </div>
                     </React.Fragment>
                   );
                 }}
               </SidebarLinkGroup>
+
+              
               {/* Rooms */}
               <SidebarLinkGroup activecondition={pathname.includes("rooms")}>
                 {(handleClick, open) => {

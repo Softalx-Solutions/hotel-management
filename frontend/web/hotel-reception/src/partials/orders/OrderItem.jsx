@@ -1,7 +1,10 @@
 import React from 'react';
+import EndDate from '../../components/EndDate';
+import StartDate from '../../components/StartDate ';
 
-import Related01 from '../../images/related-product-01.jpg';
 import HotelCard from '../../pages/component/HotelCard';
+import RoomNo from './RoomNo';
+import RoomType from './RoomType';
 
 function OrderItem() {
   return (
@@ -9,69 +12,83 @@ function OrderItem() {
       <ul>
         {/* Cart item */}
         <li className="sm:flex items-center py-6 border-b border-slate-200">
-          <a className="block mb-4 sm:mb-0 mr-5 md:w-32 xl:w-auto shrink-0" href="#0">
-            <img className="rounded-sm" src={Related01} width="200" height="142" alt="Product 01" />
-          </a>
-          <div className="grow">
-            <a href="#0">
-              <h3 className="text-lg font-semibold text-slate-800 mb-1">The Complete Front-End Development Course!</h3>
-            </a>
-            <div className="text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</div>
-            {/* Product meta */}
-            <div className="flex flex-wrap justify-between items-center">
-              {/* Rating and price */}
-              <div className="flex flex-wrap items-center space-x-2 mr-2">
-                {/* Rating */}
-                <div className="flex items-center space-x-2">
-                  {/* Stars */}
-                  <div className="flex space-x-1">
-                    <button>
-                      <span className="sr-only">1 star</span>
-                      <svg className="w-4 h-4 fill-current text-amber-500" viewBox="0 0 16 16">
-                        <path d="M10 5.934L8 0 6 5.934H0l4.89 3.954L2.968 16 8 12.223 13.032 16 11.11 9.888 16 5.934z" />
-                      </svg>
-                    </button>
-                    <button>
-                      <span className="sr-only">2 stars</span>
-                      <svg className="w-4 h-4 fill-current text-amber-500" viewBox="0 0 16 16">
-                        <path d="M10 5.934L8 0 6 5.934H0l4.89 3.954L2.968 16 8 12.223 13.032 16 11.11 9.888 16 5.934z" />
-                      </svg>
-                    </button>
-                    <button>
-                      <span className="sr-only">3 stars</span>
-                      <svg className="w-4 h-4 fill-current text-amber-500" viewBox="0 0 16 16">
-                        <path d="M10 5.934L8 0 6 5.934H0l4.89 3.954L2.968 16 8 12.223 13.032 16 11.11 9.888 16 5.934z" />
-                      </svg>
-                    </button>
-                    <button>
-                      <span className="sr-only">4 stars</span>
-                      <svg className="w-4 h-4 fill-current text-amber-500" viewBox="0 0 16 16">
-                        <path d="M10 5.934L8 0 6 5.934H0l4.89 3.954L2.968 16 8 12.223 13.032 16 11.11 9.888 16 5.934z" />
-                      </svg>
-                    </button>
-                    <button>
-                      <span className="sr-only">5 stars</span>
-                      <svg className="w-4 h-4 fill-current text-slate-300" viewBox="0 0 16 16">
-                        <path d="M10 5.934L8 0 6 5.934H0l4.89 3.954L2.968 16 8 12.223 13.032 16 11.11 9.888 16 5.934z" />
-                      </svg>
-                    </button>
+          <div className="w-full p-3 rounded-sm text bg-white border border-slate-200 py-6">
+            <div className="grow">
+              <div>
+                  <div className="text-slate-800 font-semibold mb-2">Client details</div>
+                <div className="space-y-4">
+                   {/* Client names*/}
+                  <div className="flex space-x-4">
+                    <div className="flex-1">
+                      <label className="block text-sm font-medium mb-1" htmlFor="first-name">First Name <span className="text-rose-500">*</span></label>
+                      <input id="first-name" className="form-input w-full" type="text" placeholder="John" />
+                    </div>
+                    <div className="flex-1">
+                      <label className="block text-sm font-medium mb-1" htmlFor="last-name">Last Name <span className="text-rose-500">*</span></label>
+                      <input id="last-name" className="form-input w-full" type="text" placeholder="Doe" />
+                    </div>
                   </div>
-                  {/* Rate */}
-                  <div className="inline-flex text-sm font-medium text-amber-600">4.2</div>
+                  <div>
+                    <label className="block text-sm font-medium mb-1" htmlFor="other-names">Phone No. <span className="text-rose-500">*</span></label>
+                    <input id="other-names" className="form-input w-full" type="text" placeholder="+234xxxxxxxxxxx" />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label className="block text-sm font-medium mb-1" htmlFor="client-email">Email Address <span className="text-rose-500">*</span></label>
+                    <input id="client-email" className="form-input w-full" type="email" placeholder="john@example.com" />
+                  </div>
+                  
+                   {/* Client next of kin details */}
+                  <div className="text-slate-800 font-semibold ">Next of Kin details</div>
+                  <div className="flex space-x-4">
+                    <div className="flex-1">
+                      <label className="block text-sm font-medium mb-1" htmlFor="next-first-name">First Name <span className="text-rose-500">*</span></label>
+                      <input id="next-first-name" className="form-input w-full" type="text" placeholder="Kinn" />
+                    </div>
+                    <div className="flex-1">
+                      <label className="block text-sm font-medium mb-1" htmlFor="next-last-name">Last Name <span className="text-rose-500">*</span></label>
+                      <input id="next-last-name" className="form-input w-full" type="text" placeholder="Doe" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-1" htmlFor="next-phone-no">Phone No. <span className="text-rose-500">*</span></label>
+                    <input id="next-phone-no" className="form-input w-full" type="text" placeholder="+234xxxxxxxxxxx" />
+                  </div>
+                 
+
+                  <div className="flex space-x-4">
+                    <div className="flex-1">
+                      <label className="block text-sm font-medium mb-1" htmlFor="start-date">Start Date <span className="text-rose-500">*</span></label>
+                      < StartDate  minDate={new Date()} />
+                    </div>
+                    <div className="flex-1">
+                      <label className="block text-sm font-medium mb-1" htmlFor="end-date">End Date <span className="text-rose-500">*</span></label>
+                      < EndDate />
+                    </div>
+                  </div>
+
+                  <div className="flex space-x-4">
+                    <div className="flex-1">
+                      <label className="block text-sm font-medium mb-1" htmlFor="first-name">Room Type <span className="text-rose-500">*</span></label>
+                      < RoomType />
+                    </div>
+                    <div className="flex-1">
+                      <label className="block text-sm font-medium mb-1" htmlFor="last-name">Room No. <span className="text-rose-500">*</span></label>
+                      < RoomNo />
+                    </div>
+                  </div>
+
                 </div>
-                <div className="text-slate-400">·</div>
-                {/* Price */}
-                <div>
-                  <div className="inline-flex text-sm font-medium bg-emerald-100 text-emerald-600 rounded-full text-center px-2 py-0.5">$89.00</div>
-                </div>
+               
               </div>
-              <button className="text-sm underline hover:no-underline">Remove</button>
             </div>
           </div>
+            
         </li>
         {/* Cart item */}
         <li className="sm:flex items-center py-6 border-b border-slate-200">
-         <HotelCard />
+          <HotelCard />
         </li>
       </ul>
 

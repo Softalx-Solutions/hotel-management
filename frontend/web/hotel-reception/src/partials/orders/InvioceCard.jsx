@@ -1,10 +1,12 @@
 import React from 'react'
 
-function InvioceCard() {
-  return (
-    <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
+const InvioceCard = React.forwardRef((props, ref)=> {
 
-              <div className="max-w-2xl m-auto my-16">
+
+  return (
+    <div ref={ref} className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto" >
+
+              <div className="max-w-2xl m-auto my-16" >
 
                 <div className="text-center bg-white shadow-md rounded border border-slate-200 p-10">
                 {/* <InvioceCard /> */}
@@ -16,13 +18,13 @@ function InvioceCard() {
                     </svg>
                   </div>
                   
-                  <h2 className="text-2xl text-slate-800 font-bold mb-2">OneSpring Hotel & Suite</h2>
+                  <h2 className="text-2xl text-rose-500 font-bold mb-2">OneSpring Hotel & Suite</h2>
                   <div className="">756 Java Lane</div>
                   <div className="">Columbia, SC 29210 .</div>
                   <div className="mb-6">Rego Park Queens, NY 11734.</div>
 
                   <div className="inline-flex items-center justify-center w-16 h-16 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" className="bi bi-qr-code" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" className="bi bi-qr-code" viewBox="0 0 16 16">
                       <path d="M2 2h2v2H2V2Z"/>
                       <path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"/>
                       <path d="M6 10v6H0v-6h6Zm-5 1v4h4v-4H1Zm11-9h2v2h-2V2Z"/>
@@ -31,7 +33,12 @@ function InvioceCard() {
                     </svg>
                   </div>
 
+                  <div className="">Room Number</div>
+                  <div className=" text-slate-800 font-bold mb-2">167</div>
 
+                  <div className="">Booking Number</div>
+                  <div className=" text-slate-800 font-bold mb-2">OHN-45te-Jke9-BB70</div>
+                  
 
                   <div className="flex flex-col">
                     <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -39,44 +46,44 @@ function InvioceCard() {
                         <div className="overflow-hidden">
                           <table className="min-w-full">
                             <tbody>
+                              <tr className="bg-white ">
+                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                  Room 
+                                </td>
+                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                  $205
+                                </td>
+                              </tr>
                               <tr className="">
                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                  Otto
+                                  No. of Days
                                 </td>
                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                  @mdo
-                                </td>
-                              </tr>
-                              <tr className="bg-white ">
-                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                  Thornton
-                                </td>
-                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                  @fat
+                                  (1)
                                 </td>
                               </tr>
                               <tr className="bg-white ">
                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                  Wild
+                                  Cleaning Fee 
                                 </td>
                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                  @twitter
-                                </td>
-                              </tr>
-                              <tr className="bg-white ">
-                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                  Wild
-                                </td>
-                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                  @twitter
+                                  $0
                                 </td>
                               </tr>
                               <tr className="bg-white ">
                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                  Wild
+                                  VAT (2.5%)
                                 </td>
                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                  @twitter
+                                  $48
+                                </td>
+                              </tr>
+                              <tr className="bg-white ">
+                                <td className="text-sm text-slate-800 font-bold px-6 py-4 whitespace-nowrap">
+                                  Total (incl. VATs)
+                                </td>
+                                <td className="text-sm text-slate-800 font-bold px-6 py-4 whitespace-nowrap">
+                                  $253
                                 </td>
                               </tr>
                             </tbody>
@@ -84,23 +91,16 @@ function InvioceCard() {
                         </div>
                       </div>
                     </div>
+                    <hr className='my-4' />
+                    <div className='text-sm'>Note: this booking officially Starts <span className='text-slate-800 font-bold'>22/12/23</span>  and Ends <span className='text-slate-800 font-bold'>23/12/23</span> and no refund for forfeit bookings</div>
                   </div>
                   
                   
                   
-                  <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white mt-10">
-                    <svg className="w-4 h-4 fill-current opacity-50 shrink-0" viewBox="0 0 16 16">
-                      <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
-                    </svg>
-                    <span className="ml-2">Add Event</span>
-                  </button>
                 </div>
-
-                
-
               </div>
           </div>
   )
-}
+})
 
 export default InvioceCard

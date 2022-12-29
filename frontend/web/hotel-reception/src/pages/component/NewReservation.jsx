@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 
 import Header from '../../partials/Header';
-import OrderDropdown from '../../partials/orders/OrderDropDown';
+import PaymentMethod from '../../partials/orders/PaymentMethod';
 
 import OrderItem from "../../partials/orders/OrderItem"
-function NewBooking() {
+function NewReservation() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -36,7 +36,7 @@ function NewBooking() {
                 </div>
                 <header className="mb-2">
                   {/* Title */}
-                  <h1 className="text-2xl md:text-3xl text-slate-800 font-bold">New Booking ✨</h1>
+                  <h1 className="text-2xl md:text-3xl text-slate-800 font-bold">New Reservation ✨</h1>
                 </header>
 
                 {/* Cart items */}
@@ -51,7 +51,7 @@ function NewBooking() {
                   {/* Order details */}
                   <ul className="mb-4">
                     <li className="text-sm w-full flex justify-between py-3 border-b border-slate-200">
-                      <div>Room</div>
+                      <div>Room <span>x 1</span></div>
                       <div className="font-medium text-slate-800">$205</div>
                     </li>
                     <li className="text-sm w-full flex justify-between py-3 border-b border-slate-200">
@@ -67,22 +67,14 @@ function NewBooking() {
                       <div className="font-medium text-emerald-600">$253</div>
                     </li>
                   </ul>
-                  {/* Promo box */}
-                  <div className="mb-6">
-                    <div className="flex items-center justify-between">
-                      <label className="block text-sm font-medium mb-1" htmlFor="promo">Promo Code</label>
-                      <div className="text-sm text-slate-400 italic">optional</div>
-                    </div>
-                    <input id="promo" className="form-input w-full mb-2" type="text" />
-                    <button className="btn w-full bg-indigo-500 hover:bg-indigo-600 text-white disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed shadow-none" disabled>Apply Code</button>
-                  </div>
+                 
 
-                  {/* Promo box */}
+                  {/* Payment method*/}
                   <div className="mb-6">
                     <div className="flex items-center justify-between">
                       <label className="block text-sm font-medium mb-1" htmlFor="promo">Payment Method</label>
                     </div>
-                    <OrderDropdown />
+                    <PaymentMethod />
                   </div>
 
 
@@ -103,4 +95,4 @@ function NewBooking() {
   );
 }
 
-export default NewBooking;
+export default NewReservation;

@@ -108,117 +108,121 @@ function Home() {
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 lg:sidebar-expanded:grid-cols-2 xl:sidebar-expanded:grid-cols-3 gap-6">
                   
                   {/* Item  QR-Code*/}
-                  <div className="bg-slate-100 rounded-sm text-center p-5">
-                    <div className="flex flex-col h-full">
-                      <div className="grow mb-2">
-                        {/* Icon */}
-                        <div className="inline-flex w-12 h-12 rounded-full bg-indigo-400">
-                          <svg className="w-12 h-12" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                              <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="icon1-a">
-                                <stop stopColor="#FFF" offset="0%" />
-                                <stop stopColor="#A5B4FC" offset="100%" />
-                              </linearGradient>
-                            </defs>
-                            <g fillRule="nonzero" fill="none">
-                              <path
-                                d="M19.236 21.995h-3.333c-.46 0-.833.352-.833.786v9.428c0 .434.373.786.833.786h4.167V22.78c0-.434-.374-.786-.834-.786Z"
-                                fill="#4F46E5"
-                                opacity=".88"
-                              />
-                              <path
-                                d="M34.234 20.073a2.393 2.393 0 0 0-.735-.116h-5v-2.609c0-3.325-2.157-4.297-3.298-4.347a.828.828 0 0 0-.611.24.888.888 0 0 0-.257.63v4.032L21 22.077v10.924h10.19c1.1.005 2.073-.744 2.392-1.842l2.308-7.826a2.711 2.711 0 0 0-.181-1.988 2.528 2.528 0 0 0-1.475-1.272Z"
-                                fill="url(#icon1-a)"
-                                transform="translate(-.93 -.005)"
-                              />
-                            </g>
-                          </svg>
+                  <Link to="#/new-reservation">
+                    <div className="bg-slate-100 rounded-sm text-center p-5">
+                      <div className="flex flex-col h-full">
+                        <div className="grow mb-2">
+                          {/* Icon */}
+                          <div className="inline-flex w-12 h-12 rounded-full bg-indigo-400">
+                            <svg className="w-12 h-12" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                              <defs>
+                                <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="icon1-a">
+                                  <stop stopColor="#FFF" offset="0%" />
+                                  <stop stopColor="#A5B4FC" offset="100%" />
+                                </linearGradient>
+                              </defs>
+                              <g fillRule="nonzero" fill="none">
+                                <path
+                                  d="M19.236 21.995h-3.333c-.46 0-.833.352-.833.786v9.428c0 .434.373.786.833.786h4.167V22.78c0-.434-.374-.786-.834-.786Z"
+                                  fill="#4F46E5"
+                                  opacity=".88"
+                                />
+                                <path
+                                  d="M34.234 20.073a2.393 2.393 0 0 0-.735-.116h-5v-2.609c0-3.325-2.157-4.297-3.298-4.347a.828.828 0 0 0-.611.24.888.888 0 0 0-.257.63v4.032L21 22.077v10.924h10.19c1.1.005 2.073-.744 2.392-1.842l2.308-7.826a2.711 2.711 0 0 0-.181-1.988 2.528 2.528 0 0 0-1.475-1.272Z"
+                                  fill="url(#icon1-a)"
+                                  transform="translate(-.93 -.005)"
+                                />
+                              </g>
+                            </svg>
+                          </div>
+                          {/* Content */}
+                          <h3 className="text-lg font-semibold text-slate-800 mb-1">Scan QR Code</h3>
+                          <div className="text-sm">Scan slip or phone to lodge customer.</div>
                         </div>
-                        {/* Content */}
-                        <h3 className="text-lg font-semibold text-slate-800 mb-1">Scan QR Code</h3>
-                        <div className="text-sm">Scan slip or phone to lodge customer.</div>
-                      </div>
-                      {/* Link */}
-                      <div>
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
-                          Explore -&gt;
-                        </a>
+                        <div>
+                          <div className="text-sm font-medium text-indigo-500 hover:text-indigo-600">
+                            Explore -&gt;
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
+
                   
                   {/* Item New-Booking*/}
-                  <div className="bg-slate-100 rounded-sm text-center p-5">
-                    <div className="flex flex-col h-full">
-                      <div className="grow mb-2">
-                        {/* Icon */}
-                        <div className="inline-flex w-12 h-12 rounded-full bg-indigo-400">
-                          <svg className="w-12 h-12" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                              <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="icon2-a">
-                                <stop stopColor="#FFF" offset="0%" />
-                                <stop stopColor="#A5B4FC" offset="100%" />
-                              </linearGradient>
-                            </defs>
-                            <g fillRule="nonzero" fill="none">
-                              <path
-                                d="M26.5 19c4.695 0 8.5 3.184 8.5 7.111 0 1.597-.638 3.067-1.7 4.253V35l-4.108-2.148a10 10 0 0 1-2.692.37c-4.695 0-8.5-3.184-8.5-7.11C18 22.183 21.805 19 26.5 19Z"
-                                fill="#4F46E5"
-                                opacity=".88"
-                              />
-                              <path
-                                d="M23 13c-5.523 0-10 3.582-10 8 0 1.797.75 3.45 2 4.785V31l4.833-2.416c.996.266 2.059.416 3.167.416 5.523 0 10-3.582 10-8s-4.477-8-10-8Z"
-                                fill="url(#icon2-a)"
-                              />
-                            </g>
-                          </svg>
+                  <Link to="/new-reservation">
+                    <div className="bg-slate-100 rounded-sm text-center p-5">
+                      <div className="flex flex-col h-full">
+                        <div className="grow mb-2">
+                          {/* Icon */}
+                          <div className="inline-flex w-12 h-12 rounded-full bg-indigo-400">
+                            <svg className="w-12 h-12" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                              <defs>
+                                <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="icon2-a">
+                                  <stop stopColor="#FFF" offset="0%" />
+                                  <stop stopColor="#A5B4FC" offset="100%" />
+                                </linearGradient>
+                              </defs>
+                              <g fillRule="nonzero" fill="none">
+                                <path
+                                  d="M26.5 19c4.695 0 8.5 3.184 8.5 7.111 0 1.597-.638 3.067-1.7 4.253V35l-4.108-2.148a10 10 0 0 1-2.692.37c-4.695 0-8.5-3.184-8.5-7.11C18 22.183 21.805 19 26.5 19Z"
+                                  fill="#4F46E5"
+                                  opacity=".88"
+                                />
+                                <path
+                                  d="M23 13c-5.523 0-10 3.582-10 8 0 1.797.75 3.45 2 4.785V31l4.833-2.416c.996.266 2.059.416 3.167.416 5.523 0 10-3.582 10-8s-4.477-8-10-8Z"
+                                  fill="url(#icon2-a)"
+                                />
+                              </g>
+                            </svg>
+                          </div>
+                          {/* Content */}
+                          <h3 className="text-lg font-semibold text-slate-800 mb-1">New Reservation</h3>
+                          <div className="text-sm">Reserve room for client on site.</div>
                         </div>
-                        {/* Content */}
-                        <h3 className="text-lg font-semibold text-slate-800 mb-1">Make new Booking</h3>
-                        <div className="text-sm">Book room for client on site.</div>
-                      </div>
-                      {/* Link */}
-                      <div>
-                        <Link to="/new-booking" className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
-                          Explore -&gt;
-                        </Link>
+                        <div>
+                          <div className="text-sm font-medium text-indigo-500 hover:text-indigo-600">
+                            Explore -&gt;
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                   
                   {/* Item */}
-                  <div className="bg-slate-100 rounded-sm text-center p-5">
-                    <div className="flex flex-col h-full">
-                      <div className="grow mb-2">
-                        {/* Icon */}
-                        <div className="inline-flex w-12 h-12 rounded-full bg-indigo-400">
-                          <svg className="w-12 h-12" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                              <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="icon3-a">
-                                <stop stopColor="#FFF" offset="0%" />
-                                <stop stopColor="#A5B4FC" offset="100%" />
-                              </linearGradient>
-                            </defs>
-                            <g fillRule="nonzero" fill="none">
-                              <circle fill="url(#icon3-a)" cx="30.5" cy="17.5" r="4.5" />
-                              <circle fill="#4F46E5" opacity=".88" cx="17.5" cy="17.5" r="4.5" />
-                              <circle fill="#4F46E5" opacity=".88" cx="30.5" cy="30.5" r="4.5" />
-                              <circle fill="url(#icon3-a)" cx="17.5" cy="30.5" r="4.5" />
-                            </g>
-                          </svg>
+                  <Link to="/reservations">
+                    <div className="bg-slate-100 rounded-sm text-center p-5">
+                      <div className="flex flex-col h-full">
+                        <div className="grow mb-2">
+                          {/* Icon */}
+                          <div className="inline-flex w-12 h-12 rounded-full bg-indigo-400">
+                            <svg className="w-12 h-12" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                              <defs>
+                                <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="icon3-a">
+                                  <stop stopColor="#FFF" offset="0%" />
+                                  <stop stopColor="#A5B4FC" offset="100%" />
+                                </linearGradient>
+                              </defs>
+                              <g fillRule="nonzero" fill="none">
+                                <circle fill="url(#icon3-a)" cx="30.5" cy="17.5" r="4.5" />
+                                <circle fill="#4F46E5" opacity=".88" cx="17.5" cy="17.5" r="4.5" />
+                                <circle fill="#4F46E5" opacity=".88" cx="30.5" cy="30.5" r="4.5" />
+                                <circle fill="url(#icon3-a)" cx="17.5" cy="30.5" r="4.5" />
+                              </g>
+                            </svg>
+                          </div>
+                          {/* Content */}
+                          <h3 className="text-lg font-semibold text-slate-800 mb-1">View Reservations</h3>
+                          <div className="text-sm">View all Reservation.</div>
                         </div>
-                        {/* Content */}
-                        <h3 className="text-lg font-semibold text-slate-800 mb-1">Apps &amp; Tools</h3>
-                        <div className="text-sm">Lorem ipsum dolor sit consectetur adipiscing elit sed do.</div>
-                      </div>
-                      {/* Link */}
-                      <div>
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
-                          Explore -&gt;
-                        </a>
+                        <div>
+                          <div className="text-sm font-medium text-indigo-500 hover:text-indigo-600" >
+                            Explore -&gt;
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                   
                 </div>
               </div>
