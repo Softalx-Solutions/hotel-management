@@ -3,10 +3,18 @@
 @tailwind utilities;
 
 #root {
-    padding: 0px;
-    max-width: 100%;
+  padding: 0px;
+  max-width: 100%;
 }
 
 .card {
-    @apply rounded-xl shadow-lg
+  @apply rounded-xl shadow-lg;
+}
+
+.mobile-chart {
+  @apply w-[90%] mx-auto h-48 py-6 box-border m-4;
+}
+
+.desktop-chart {
+  @apply md:flex md:flex-1 md:flex-wrap;
 }

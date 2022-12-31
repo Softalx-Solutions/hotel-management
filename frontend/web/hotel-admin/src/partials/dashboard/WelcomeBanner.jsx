@@ -1,4 +1,5 @@
 import React from "react";
+import { greet } from "../../functions";
 
 function WelcomeBanner() {
   let hours = new Date().getHours();
@@ -69,7 +70,9 @@ function WelcomeBanner() {
 
       {/* Content */}
       <div className="relative">
-        <h1 className="text-2xl md:text-3xl text-slate-800 font-bold mb-1">{`Good ${greet(hours)}, Acme Inc. 👋`}</h1>
+        <h1 className="text-2xl md:text-3xl text-slate-800 font-bold mb-1">{`Good ${greet(
+          hours
+        )}, Acme Inc. 👋`}</h1>
         <p>Here is what’s happening with your business today:</p>
       </div>
     </div>
@@ -77,12 +80,3 @@ function WelcomeBanner() {
 }
 
 export default WelcomeBanner;
-
-const greet = (hours) =>{
-  return hours >= 0 && hours <=11
-    ? "morning"
-    : hours >= 12 && hours<=16
-    ? "afternoon"
-    : hours >= 16 && hours <= 21
-    ? "evening"
-    : "night";}

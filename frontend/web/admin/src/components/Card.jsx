@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Card({title}) {
+function Card({children, className}) {
   return (
-    <div>Card</div>
+    <div className={`${className} card`}>{children}</div>
   )
 }
 
