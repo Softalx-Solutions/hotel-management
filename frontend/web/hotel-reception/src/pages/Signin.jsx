@@ -24,8 +24,8 @@ function Reservations() {
               <form>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium mb-1" htmlFor="email">Hotel ID</label>
-                    <input id="email" className="form-input w-full" type="text"  placeholder='2H3K4JHJ445KKJKH'/>
+                    <label className="block text-sm font-medium mb-1" htmlFor="text">Hotel ID</label>
+                    <input id="text" className="form-input w-full" type="text"  placeholder='2H3K4JHJ445KKJKH'/>
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-1" htmlFor="email">Email Address</label>
