@@ -1,63 +1,60 @@
-import React, { useEffect } from 'react';
-import {
-  Routes,
-  Route,
-  useLocation
-} from 'react-router-dom';
+import React, { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
-import './css/style.css';
+import "./css/style.css";
 
-import './charts/ChartjsConfig';
+import "./charts/ChartjsConfig";
 
 // Import pages
-import Dashboard from './pages/Dashboard';
-import Analytics from './pages/Analytics';
-import Campaigns from './pages/Campaigns';
-import Messages from './pages/Messages';
-import Inbox from './pages/Inbox';
-import Calendar from './pages/Calendar';
-import Account from './pages/settings/Account';
-import Notifications from './pages/settings/Notifications';
-import Apps from './pages/settings/Apps';
-import Plans from './pages/settings/Plans';
-import Billing from './pages/settings/Billing';
-import Feedback from './pages/settings/Feedback';
-import Changelog from './pages/utility/Changelog';
-import Roadmap from './pages/utility/Roadmap';
-import Faqs from './pages/utility/Faqs';
-import EmptyState from './pages/utility/EmptyState';
-import Staff from './pages/staff/Staff';
-import PageNotFound from './pages/utility/PageNotFound';
-import KnowledgeBase from './pages/utility/KnowledgeBase';
-import Signin from './pages/Signin';
-import Signup from './pages/Signup';
-import ResetPassword from './pages/ResetPassword';
-import Onboarding01 from './pages/Onboarding01';
-import Onboarding02 from './pages/Onboarding02';
-import Onboarding03 from './pages/Onboarding03';
-import Onboarding04 from './pages/Onboarding04';
-import ButtonPage from './pages/component/ButtonPage';
-import FormPage from './pages/component/FormPage';
-import DropdownPage from './pages/component/DropdownPage';
-import AlertPage from './pages/component/AlertPage';
-import ModalPage from './pages/component/ModalPage';
-import PaginationPage from './pages/component/PaginationPage';
-import TabsPage from './pages/component/TabsPage';
-import BreadcrumbPage from './pages/component/BreadcrumbPage';
-import BadgePage from './pages/component/BadgePage';
-import AvatarPage from './pages/component/AvatarPage';
-import TooltipPage from './pages/component/TooltipPage';
-import AccordionPage from './pages/component/AccordionPage';
-import IconsPage from './pages/component/IconsPage';
+import Dashboard from "./pages/Dashboard";
+import Analytics from "./pages/Analytics";
+import Campaigns from "./pages/Campaigns";
+import Messages from "./pages/Messages";
+import Inbox from "./pages/Inbox";
+import Calendar from "./pages/Calendar";
+import Account from "./pages/settings/Account";
+import Notifications from "./pages/settings/Notifications";
+import Apps from "./pages/settings/Apps";
+import Plans from "./pages/settings/Plans";
+import Billing from "./pages/settings/Billing";
+import Feedback from "./pages/settings/Feedback";
+import Changelog from "./pages/utility/Changelog";
+import Roadmap from "./pages/utility/Roadmap";
+import Faqs from "./pages/utility/Faqs";
+import EmptyState from "./pages/utility/EmptyState";
+import Staff from "./pages/staff/Staff";
+import Rooms from "./pages/rooms/Rooms";
+import PageNotFound from "./pages/utility/PageNotFound";
+import KnowledgeBase from "./pages/utility/KnowledgeBase";
+import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
+import ResetPassword from "./pages/ResetPassword";
+import Onboarding01 from "./pages/Onboarding01";
+import Onboarding02 from "./pages/Onboarding02";
+import Onboarding03 from "./pages/Onboarding03";
+import Onboarding04 from "./pages/Onboarding04";
+import ButtonPage from "./pages/component/ButtonPage";
+import FormPage from "./pages/component/FormPage";
+import DropdownPage from "./pages/component/DropdownPage";
+import AlertPage from "./pages/component/AlertPage";
+import ModalPage from "./pages/component/ModalPage";
+import PaginationPage from "./pages/component/PaginationPage";
+import TabsPage from "./pages/component/TabsPage";
+import BreadcrumbPage from "./pages/component/BreadcrumbPage";
+import BadgePage from "./pages/component/BadgePage";
+import AvatarPage from "./pages/component/AvatarPage";
+import TooltipPage from "./pages/component/TooltipPage";
+import AccordionPage from "./pages/component/AccordionPage";
+import IconsPage from "./pages/component/IconsPage";
+import Reservations from "./pages/component/Reservations";
 
 function App() {
-
   const location = useLocation();
 
   useEffect(() => {
-    document.querySelector('html').style.scrollBehavior = 'auto'
-    window.scroll({ top: 0 })
-    document.querySelector('html').style.scrollBehavior = ''
+    document.querySelector("html").style.scrollBehavior = "auto";
+    window.scroll({ top: 0 });
+    document.querySelector("html").style.scrollBehavior = "";
   }, [location.pathname]); // triggered on route change
 
   return (
@@ -81,6 +78,8 @@ function App() {
         <Route path="/utility/faqs" element={<Faqs />} />
         <Route path="/utility/empty-state" element={<EmptyState />} />
         <Route path="/staff" element={<Staff />} />
+        <Route path="/rooms" element={<Rooms />} />
+        <Route path="/reservations" element={<Reservations />} />
         <Route path="/utility/404" element={<PageNotFound />} />
         <Route path="/utility/knowledge-base" element={<KnowledgeBase />} />
         <Route path="/signin" element={<Signin />} />

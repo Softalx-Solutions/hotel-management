@@ -2,18 +2,18 @@ import React, { useState, useEffect } from "react";
 
 import Sidebar from "../../partials/Sidebar";
 import Header from "../../partials/Header";
-import StaffTable from "./StaffTable";
-import { staffList } from "../../data";
+import RoomsTable from "./RoomsTable";
+import { roomsList } from "../../data";
 import ModalBasic from "../../components/ModalBasic";
 import { Link } from "react-router-dom";
 
-function Staff() {
+function Rooms() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const [staff, setStaff] = useState([]);
+  const [rooms, setRooms] = useState([]);
   useEffect(() => {
-    setStaff(staffList);
-  }, [staff]);
+    setRooms(roomsList);
+  }, [rooms]);
 
   const handleNew = (e) => {
     e.stopPropagation();
@@ -37,7 +37,7 @@ function Staff() {
               {/* Left: Title */}
               <div className="mb-4 sm:mb-0">
                 <h1 className="text-2xl md:text-3xl text-slate-800 font-bold">
-                  Staff ✨
+                  Rooms ✨
                 </h1>
               </div>
 
@@ -54,14 +54,14 @@ function Staff() {
                   >
                     <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
                   </svg>
-                  <span className="ml-2">New Staff</span>
+                  <span className="ml-2">New Room</span>
                 </button>
               </div>
             </div>
 
             <div className="border-t border-slate-200">
               {/* {Page content} */}
-              {staff.length < 1 ? (
+              {rooms.length < 1 ? (
                 <div className="max-w-2xl m-auto mt-16">
                   <div className="text-center px-4">
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-t from-slate-200 to-slate-100 mb-4">
@@ -81,10 +81,10 @@ function Staff() {
                       </svg>
                     </div>
                     <h2 className="text-2xl text-slate-800 font-bold mb-2">
-                      You currently have no staff!
+                      You currently have no room!
                     </h2>
                     <div className="mb-6">
-                      Please register all your staff or employ if you have none
+                      Please register all your room or employ if you have none
                       to see the list here.
                     </div>
                     <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white">
@@ -94,12 +94,12 @@ function Staff() {
                       >
                         <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
                       </svg>
-                      <span className="ml-2">New Staff</span>
+                      <span className="ml-2">New room</span>
                     </button>
                   </div>
                 </div>
               ) : (
-                <StaffTable staff={staff} />
+                <RoomsTable data={rooms} />
               )}
 
               {/* Page Content end */}
@@ -121,7 +121,7 @@ function Staff() {
               <div className="min-h-[screen/2] h-full flex flex-col after:flex-1">
                 <div className="w-[80%] mx-auto px-2 py-4">
                   <h1 className="text-3xl text-slate-800 font-bold mb-6">
-                    New Staff ✨
+                    New rooms ✨
                   </h1>
                   {/* Form */}
                   <form>
@@ -240,4 +240,4 @@ function Staff() {
   );
 }
 
-export default Staff;
+export default Rooms;

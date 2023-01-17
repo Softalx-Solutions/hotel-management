@@ -369,102 +369,6 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       >
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
-                            {/* <svg
-                              className="shrink-0 h-6 w-6"
-                              viewBox="0 0 64 64"
-                            >
-                              <g
-                                className={`fill-current text-slate-400 ${
-                                  pathname.includes("staff") &&
-                                  "!text-indigo-500"
-                                }`}
-                              >
-                                <rect
-                                  className={`fill-current text-slate-400 ${
-                                    pathname.includes("staff") &&
-                                    "!text-indigo-500"
-                                  }`}
-                                  x="3"
-                                  y="42"
-                                  width="10"
-                                  height="16"
-                                  rx="1"
-                                  fill="#212121"
-                                ></rect>
-                                <rect
-                                  className={`fill-current text-slate-400 ${
-                                    pathname.includes("staff") &&
-                                    "!text-indigo-500"
-                                  }`}
-                                  x="35"
-                                  y="42"
-                                  width="10"
-                                  height="16"
-                                  rx="1"
-                                  fill="#212121"
-                                ></rect>
-                                <rect
-                                  className={`fill-current text-slate-400 ${
-                                    pathname.includes("staff") &&
-                                    "!text-indigo-500"
-                                  }`}
-                                  x="19"
-                                  y="26"
-                                  width="10"
-                                  height="32"
-                                  rx="1"
-                                  fill="#212121"
-                                ></rect>
-                                <rect
-                                  className={`fill-current text-slate-400 ${
-                                    pathname.includes("staff") &&
-                                    "!text-indigo-500"
-                                  }`}
-                                  x="51"
-                                  y="26"
-                                  width="10"
-                                  height="32"
-                                  rx="1"
-                                  fill="#212121"
-                                ></rect>
-                                <path
-                                  className={`fill-current text-slate-400 ${
-                                    pathname.includes("staff") &&
-                                    "!text-white"
-                                  }`}
-                                  d="M18.4,15.184l-7.649,7.649a5.015,5.015,0,1,0,1.414,1.414L19.816,16.6A7.017,7.017,0,0,1,18.4,15.184Z"
-                                  // data-color="color-2"
-                                ></path>
-                                <circle
-                                  className={`fill-current text-slate-400 ${
-                                    pathname.includes("staff") &&
-                                    "!text-indigo-500"
-                                  }`}
-                                  cx="24"
-                                  cy="11"
-                                  r="5"
-                                  // data-color="color-2"
-                                ></circle>
-                                <path
-                                  className={`fill-current text-slate-400 ${
-                                    pathname.includes("staff") &&
-                                    "!text-white"
-                                  }`}
-                                  d="M50.4,15.184l-7.649,7.649a4.966,4.966,0,0,0-5.506,0L29.6,15.184A7.017,7.017,0,0,1,28.184,16.6l7.649,7.649a5,5,0,1,0,8.334,0L51.816,16.6A7.017,7.017,0,0,1,50.4,15.184Z"
-                                  // data-color="color-2"
-                                ></path>
-                                <circle
-                                  className={`fill-current text-slate-400 ${
-                                    pathname.includes("staff") &&
-                                    "!text-indigo-500"
-                                  }`}
-                                  cx="56"
-                                  cy="11"
-                                  r="5"
-                                  // data-color="color-2"
-                                ></circle>
-                              </g>
-                            </svg> */}
                             <svg
                               className="shrink-0 h-7 w-7"
                               viewBox="0 0 64 64"
@@ -540,7 +444,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               className="shrink-0 h-6 w-6"
                               viewBox="0 0 64 64"
                             >
-                              <g fill="#212121" class="nc-icon-wrapper">
+                              <g fill="#212121" className="nc-icon-wrapper">
                                 <path
                                   className={`fill-current text-slate-400 ${
                                     pathname.includes("rooms") &&
@@ -582,7 +486,71 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               </SidebarLinkGroup>
 
               {/* Rooms end */}
-              
+              {/* Reservations */}
+              <SidebarLinkGroup
+                activecondition={
+                  pathname === "/reservations" ||
+                  pathname.includes("reservations")
+                }
+              >
+                {(handleClick, open) => {
+                  return (
+                    <React.Fragment>
+                      <a
+                        href="/reservations"
+                        className={`block text-slate-200 hover:text-white truncate transition duration-150 ${
+                          (pathname === "/reservations" ||
+                            pathname.includes("reservations")) &&
+                          "hover:text-slate-200"
+                        }`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          sidebarExpanded
+                            ? handleClick()
+                            : setSidebarExpanded(true);
+                        }}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center">
+                            <svg
+                              className="shrink-0 h-6 w-6"
+                              viewBox="0 0 64 64"
+                            >
+                              <g fill="#212121" className="nc-icon-wrapper">
+                                <path
+                                  className={`fill-current text-slate-400 ${
+                                    pathname.includes("reservations") &&
+                                    "text-indigo-500"
+                                  }`}
+                                  d="M32,2A30,30,0,1,0,62,32,30.034,30.034,0,0,0,32,2ZM31,9a1,1,0,0,1,2,0v5a1,1,0,0,1-2,0ZM14,33H9a1,1,0,0,1,0-2h5a1,1,0,0,1,0,2ZM33,55a1,1,0,0,1-2,0V50a1,1,0,0,1,2,0ZM44.414,22.414l-11,11a2,2,0,0,1-2.828,0l-16-16a2,2,0,1,1,2.828-2.828L32,29.171l9.586-9.585a2,2,0,0,1,2.828,2.828ZM55,33H50a1,1,0,0,1,0-2h5a1,1,0,0,1,0,2Z"
+                                  fill="#212121"
+                                ></path>
+                              </g>
+                            </svg>
+                            <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                              <NavLink
+                                end
+                                to="/reservations"
+                                className={({ isActive }) =>
+                                  "block text-slate-400 hover:text-slate-200 transition duration-150 truncate " +
+                                  (isActive ? "!text-indigo-500" : "")
+                                }
+                              >
+                                <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                  Reservations
+                                </span>
+                              </NavLink>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </React.Fragment>
+                  );
+                }}
+              </SidebarLinkGroup>
+
+              {/* Reservations end */}
+
               {/* Notifications */}
               <li
                 className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
@@ -598,9 +566,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                   }
                 >
                   <div className="flex items-center">
-                    
                     <svg className="shrink-0 h-6 w-6" viewBox="0 0 64 64">
-                      <g fill="#212121" class="nc-icon-wrapper">
+                      <g fill="#212121" className="nc-icon-wrapper">
                         <path
                           className={`fill-current text-slate-400 ${
                             pathname.includes("notifications") &&
