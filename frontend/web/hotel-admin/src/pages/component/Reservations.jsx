@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import Sidebar from "../../partials/Sidebar";
 import Header from "../../partials/Header";
 import SearchForm from "../../partials/actions/SearchForm";
 import DeleteButton from "../../partials/actions/DeleteButton";
@@ -30,6 +30,9 @@ function Reservations() {
 
   return (
     <div className="flex h-screen overflow-hidden">
+      {/* Sidebar */}
+      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+
       {/* Content area */}
       <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
         {/*  Site header */}

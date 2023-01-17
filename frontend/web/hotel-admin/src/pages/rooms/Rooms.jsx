@@ -5,8 +5,6 @@ import Header from "../../partials/Header";
 import RoomsTable from "./RoomsTable";
 import { roomsList } from "../../data";
 import ModalBasic from "../../components/ModalBasic";
-import { Link } from "react-router-dom";
-
 function Rooms() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -173,7 +171,8 @@ function Rooms() {
                           className="block text-sm font-medium mb-1"
                           htmlFor="salary"
                         >
-                          Initial salary <span className="text-rose-500">*</span>
+                          Initial salary{" "}
+                          <span className="text-rose-500">*</span>
                         </label>
                         <input
                           id="salary"
