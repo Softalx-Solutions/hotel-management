@@ -351,17 +351,14 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               </SidebarLinkGroup>
               {/* Staff */}
 
-              <SidebarLinkGroup
-                activecondition={pathname.includes("staff")}
-              >
+              <SidebarLinkGroup activecondition={pathname.includes("staff")}>
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
                       <a
                         href="/"
                         className={`block text-slate-200 hover:text-white truncate transition duration-150 ${
-                          pathname.includes("staff") &&
-                          "hover:text-slate-200"
+                          pathname.includes("staff") && "hover:text-slate-200"
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
@@ -474,7 +471,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             >
                               <g fill="#212121">
                                 <path
-                                  className={`fill-current text-slate-600 ${
+                                  className={`fill-current text-slate-400 ${
                                     pathname.includes("staff") &&
                                     "text-indigo-500"
                                   }`}
@@ -482,7 +479,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                   fill="#212121"
                                 ></path>
                                 <path
-                                  className={`fill-current text-slate-600 ${
+                                  className={`fill-current text-slate-400 ${
                                     pathname.includes("staff") &&
                                     "text-indigo-500"
                                   }`}
@@ -513,17 +510,22 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                   );
                 }}
               </SidebarLinkGroup>
-
-              
+              {/* Staff end */}
               {/* Rooms */}
-              <SidebarLinkGroup activecondition={pathname.includes("rooms")}>
+              <SidebarLinkGroup
+                activecondition={
+                  pathname === "/rooms" || pathname.includes("rooms")
+                }
+              >
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
                       <a
-                        href="#0"
+                        href="/rooms"
                         className={`block text-slate-200 hover:text-white truncate transition duration-150 ${
-                          pathname.includes("rooms") && "hover:text-slate-200"
+                          (pathname === "/rooms" ||
+                            pathname.includes("rooms")) &&
+                          "hover:text-slate-200"
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
@@ -534,39 +536,6 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       >
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
-                            {/* <svg
-                              className="shrink-0 h-6 w-6"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                className={`fill-current text-slate-600 ${
-                                  pathname.includes("rooms") &&
-                                  "text-indigo-500"
-                                }`}
-                                d="M19.714 14.7l-7.007 7.007-1.414-1.414 7.007-7.007c-.195-.4-.298-.84-.3-1.286a3 3 0 113 3 2.969 2.969 0 01-1.286-.3z"
-                              />
-                              <path
-                                className={`fill-current text-slate-400 ${
-                                  pathname.includes("rooms") &&
-                                  "text-indigo-300"
-                                }`}
-                                d="M10.714 18.3c.4-.195.84-.298 1.286-.3a3 3 0 11-3 3c.002-.446.105-.885.3-1.286l-6.007-6.007 1.414-1.414 6.007 6.007z"
-                              />
-                              <path
-                                className={`fill-current text-slate-600 ${
-                                  pathname.includes("rooms") &&
-                                  "text-indigo-500"
-                                }`}
-                                d="M5.7 10.714c.195.4.298.84.3 1.286a3 3 0 11-3-3c.446.002.885.105 1.286.3l7.007-7.007 1.414 1.414L5.7 10.714z"
-                              />
-                              <path
-                                className={`fill-current text-slate-400 ${
-                                  pathname.includes("rooms") &&
-                                  "text-indigo-300"
-                                }`}
-                                d="M19.707 9.292a3.012 3.012 0 00-1.415 1.415L13.286 5.7c-.4.195-.84.298-1.286.3a3 3 0 113-3 2.969 2.969 0 01-.3 1.286l5.007 5.006z"
-                              />
-                            </svg> */}
                             <svg
                               className="shrink-0 h-6 w-6"
                               viewBox="0 0 64 64"
@@ -575,7 +544,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                 <path
                                   className={`fill-current text-slate-400 ${
                                     pathname.includes("rooms") &&
-                                    "text-indigo-300"
+                                    "text-indigo-500"
                                   }`}
                                   d="M32,7.842,9,26.242V58a3,3,0,0,0,3,3H25V45a1,1,0,0,1,1-1H38a1,1,0,0,1,1,1V61H52a3,3,0,0,0,3-3V26.242ZM37,34a1,1,0,0,1-1,1H28a1,1,0,0,1-1-1V26a1,1,0,0,1,1-1h8a1,1,0,0,1,1,1Z"
                                   fill="#212121"
@@ -583,67 +552,37 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                 <path
                                   className={`fill-current text-slate-400 ${
                                     pathname.includes("rooms") &&
-                                    "text-indigo-300"
+                                    "text-indigo-500"
                                   }`}
                                   data-color="color-2"
                                   d="M62.625,27.219l-30-24a1,1,0,0,0-1.25,0L17,14.719V8a1,1,0,0,0-1-1H12a1,1,0,0,0-1,1V19.519l-9.625,7.7a1,1,0,0,0,1.25,1.562L32,5.281l29.375,23.5a1,1,0,1,0,1.25-1.562Z"
                                 ></path>
                               </g>
                             </svg>
-                            {/* Svg end */}
                             <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                              Rooms
+                              <NavLink
+                                end
+                                to="/rooms"
+                                className={({ isActive }) =>
+                                  "block text-slate-400 hover:text-slate-200 transition duration-150 truncate " +
+                                  (isActive ? "!text-indigo-500" : "")
+                                }
+                              >
+                                <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                  Rooms
+                                </span>
+                              </NavLink>
                             </span>
-                          </div>
-                          {/* Icon */}
-                          <div className="flex shrink-0 ml-2">
-                            <svg
-                              className={`w-3 h-3 shrink-0 ml-1 fill-current text-slate-400 ${
-                                open && "rotate-180"
-                              }`}
-                              viewBox="0 0 12 12"
-                            >
-                              <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
-                            </svg>
                           </div>
                         </div>
                       </a>
-                      <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
-                        <ul className={`pl-9 mt-1 ${!open && "hidden"}`}>
-                          <li className="mb-1 last:mb-0">
-                            <NavLink
-                              end
-                              to="/rooms/new"
-                              className={({ isActive }) =>
-                                "block text-slate-400 hover:text-slate-200 transition duration-150 truncate " +
-                                (isActive ? "!text-indigo-500" : "")
-                              }
-                            >
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Add rooms
-                              </span>
-                            </NavLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
-                            <NavLink
-                              end
-                              to="/rooms/view"
-                              className={({ isActive }) =>
-                                "block text-slate-400 hover:text-slate-200 transition duration-150 truncate " +
-                                (isActive ? "!text-indigo-500" : "")
-                              }
-                            >
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                All rooms
-                              </span>
-                            </NavLink>
-                          </li>
-                        </ul>
-                      </div>
                     </React.Fragment>
                   );
                 }}
               </SidebarLinkGroup>
+
+              {/* Rooms end */}
+              
               {/* Notifications */}
               <li
                 className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
@@ -659,28 +598,13 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                   }
                 >
                   <div className="flex items-center">
-                    {/* <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
-                      <path
-                        className={`fill-current text-slate-600 ${
-                          pathname.includes("notifications") &&
-                          "text-indigo-500"
-                        }`}
-                        d="M16 13v4H8v-4H0l3-9h18l3 9h-8Z"
-                      />
-                      <path
-                        className={`fill-current text-slate-400 ${
-                          pathname.includes("notifications") &&
-                          "text-indigo-300"
-                        }`}
-                        d="m23.72 12 .229.686A.984.984 0 0 1 24 13v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1v-8c0-.107.017-.213.051-.314L.28 12H8v4h8v-4H23.72ZM13 0v7h3l-4 5-4-5h3V0h2Z"
-                      />
-                    </svg> */}
+                    
                     <svg className="shrink-0 h-6 w-6" viewBox="0 0 64 64">
                       <g fill="#212121" class="nc-icon-wrapper">
                         <path
                           className={`fill-current text-slate-400 ${
                             pathname.includes("notifications") &&
-                            "text-indigo-300"
+                            "text-indigo-500"
                           }`}
                           d="M58.79,52.386C58.722,52.3,52,43.557,52,36V22a20,20,0,0,0-40,0V36c0,7.557-6.722,16.3-6.79,16.386A1,1,0,0,0,6,54H58a1,1,0,0,0,.79-1.614Z"
                           fill="#212121"
@@ -688,7 +612,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                         <path
                           className={`fill-current text-slate-400 ${
                             pathname.includes("notifications") &&
-                            "text-indigo-300"
+                            "text-indigo-500"
                           }`}
                           data-color="color-2"
                           d="M25.08,56a6.991,6.991,0,0,0,13.84,0Z"
