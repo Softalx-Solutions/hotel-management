@@ -13,7 +13,7 @@ function Reservations() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
   const [list, setList] = useState([]);
-
+  const [selectedFilter, setSelectedFilter] = useState('all')
   useEffect(() => {
     setList(invoices);
   }, [invoices]);
@@ -66,19 +66,19 @@ function Reservations() {
               <div className="mb-4 sm:mb-0">
                 <ul className="flex flex-wrap -m-1">
                   <li className="m-1">
-                    <button className="inline-flex items-center justify-center text-sm font-medium leading-5 rounded-full px-3 py-1 border border-transparent shadow-sm bg-indigo-500 text-white duration-150 ease-in-out">
+                    <button onClick={()=>setSelectedFilter('all')} className={`inline-flex items-center justify-center text-sm font-medium leading-5 rounded-full px-3 py-1 border border-transparent shadow-sm ${selectedFilter === 'all'?'bg-indigo-500 text-white':'bg-white text-slate-500'} duration-150 ease-in-out`}>
                       All <span className="ml-1 text-indigo-200">{list.length}</span>
                     </button>
                   </li>
                   <li className="m-1">
-                    <button className="inline-flex items-center justify-center text-sm font-medium leading-5 rounded-full px-3 py-1 border border-slate-200 hover:border-slate-300 shadow-sm bg-white text-slate-500 duration-150 ease-in-out">
+                    <button onClick={()=>setSelectedFilter('lodged')} className={`inline-flex items-center justify-center text-sm font-medium leading-5 rounded-full px-3 py-1 border border-slate-200 hover:border-slate-300 shadow-sm ${selectedFilter === 'lodged'?'bg-indigo-500 text-white':'bg-white text-slate-500'} duration-150 ease-in-out`}>
                       Lodged <span className="ml-1 text-slate-400">{list.filter((item, index)=>{
                         return item.status == 'Lodged'
                       }).length}</span>
                     </button>
                   </li>
                   <li className="m-1">
-                    <button className="inline-flex items-center justify-center text-sm font-medium leading-5 rounded-full px-3 py-1 border border-slate-200 hover:border-slate-300 shadow-sm bg-white text-slate-500 duration-150 ease-in-out">
+                    <button onClick={()=>setSelectedFilter('pending')} className={`inline-flex items-center justify-center text-sm font-medium leading-5 rounded-full px-3 py-1 border border-slate-200 hover:border-slate-300 shadow-sm ${selectedFilter === 'pending'?'bg-indigo-500 text-white':'bg-white text-slate-500'} duration-150 ease-in-out`}>
                       Pending <span className="ml-1 text-slate-400">{list.filter((item, index)=>{
                         return item.status == 'Pending'
                       }).length}</span>
