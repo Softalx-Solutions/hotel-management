@@ -1,8 +1,131 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import authService from "./authService";
+import staffService from "./staffService";
+import myImage from '../../images/applications-image-01.jpg'
 
 let initialState = {
-  user: null,
+  staff: [
+    {
+      id: "0",
+      image: myImage,
+      name: "Patricia Semklo",
+      email: "patricia.semklo@app.com",
+      salary: "$2,890.66",
+      address: "🇬🇧 London, UK",
+      role: "admin",
+      position: "Manager",
+      fav: true,
+    },
+    {
+      id: "1",
+      image: '',
+      name: "Dominik Lamakani",
+      email: "dominik.lamakani@gmail.com",
+      address: "🇩🇪 Dortmund, DE",
+      role: "admin",
+      position: "account",
+      salary: "$14,767.04",
+      fav: false,
+    },
+    {
+      id: "2",
+      image: myImage,
+      name: "Ivan Mesaros",
+      email: "imivanmes@gmail.com",
+      address: "🇫🇷 Paris, FR",
+      role: "admin",
+      position: "clerk",
+      salary: "$4,996.00",
+      fav: true,
+    },
+    {
+      id: "3",
+      image: myImage,
+      name: "Maria Martinez",
+      email: "martinezhome@gmail.com",
+      address: "🇮🇹 Bologna, IT",
+      role: "admin",
+      position: "cook",
+      salary: "$3,220.66",
+      fav: false,
+    },
+    {
+      id: "4",
+      image: null,
+      name: "Vicky Jung",
+      email: "itsvicky@contact.com",
+      address: "🇬🇧 London, UK",
+      role: "admin",
+      position: "cleaner",
+      salary: "$2,890.66",
+      fav: true,
+    },
+    {
+      id: "5",
+      image: null,
+      name: "Tisho Yanchev",
+      email: "tisho.y@kurlytech.com",
+      address: "🇬🇧 London, UK",
+      role: "admin",
+      position: "cleaner",
+      salary: "$1,649.99",
+      fav: true,
+    },
+    {
+      id: "6",
+      image: myImage,
+      name: "James Cameron",
+      email: "james.ceo@james.tech",
+      address: "🇫🇷 Marseille, FR",
+      role: "admin",
+      position: "cleaner",
+      salary: "$3,569.87",
+      fav: true,
+    },
+    {
+      id: "7",
+      image: myImage,
+      name: "Haruki Masuno",
+      email: "haruki@supermail.jp",
+      address: "🇯🇵 Tokio, JP",
+      role: "1admin",
+      position: "driver",
+      salary: "$19,246.07",
+      fav: false,
+    },
+    {
+      id: "8",
+      image: 0,
+      name: "Joe Huang",
+      email: "joehuang@hotmail.com",
+      address: "🇨🇳 Shanghai, CN",
+      role: "admin",
+      position: "cook",
+      salary: "$12,276.92",
+      fav: true,
+    },
+    {
+      id: "9",
+      image: myImage,
+      name: "Carolyn McNeail",
+      email: "carolynlove@gmail.com",
+      address: "🇮🇹 Milan, IT",
+      role: "admin",
+      position: "laundry man",
+      salary: "$1,289.97",
+      fav: false,
+    },
+    {
+      id: "10",
+      image: myImage,
+      name: "Oke Edafe Great",
+      email: "carolynlove@gmail.com",
+      address: "🇮🇹 Milan, IT",
+      role: "admin",
+      position: "laundry man",
+      salary: "$1,289.97",
+      fav: false,
+    },
+  ],
   isSuccess: false,
   isError: false,
   isLoading: false,
@@ -11,12 +134,11 @@ let initialState = {
 
 //Register user
 export const register = createAsyncThunk(
-  "auth/register",
+  "staff/register",
   async (user, thunkAPI) => {
     try {
-      return await authService.register(user);
+      return await staffService.register(user);
     } catch (error) {
-      
       // const message =
       //   (error.response && error.response.data && response.data.message) ||
       //   error.message ||
@@ -26,19 +148,9 @@ export const register = createAsyncThunk(
   }
 );
 
-//Login user
-export const login = createAsyncThunk("auth/login", async (user, thunkAPI) => {
+export const getAllStaff = createAsyncThunk("staff/user", async (thunkAPI) => {
   try {
-    return await authService.login(user);
-  } catch (error) {
-    const message = error.response.data.message;
-    return thunkAPI.rejectWithValue(message);
-  }
-});
-
-export const logout = createAsyncThunk("auth/logout", async (thunkAPI) => {
-  try {
-    return await authService.logout();
+    return await staffService.getAllStaff();
   } catch (error) {
     const message =
       (error.response && error.response.data && response.data.message) ||
@@ -48,67 +160,8 @@ export const logout = createAsyncThunk("auth/logout", async (thunkAPI) => {
   }
 });
 
-export const getUser = createAsyncThunk("auth/user", async (thunkAPI) => {
-  try {
-    return await authService.getUser();
-  } catch (error) {
-    const message =
-      (error.response && error.response.data && response.data.message) ||
-      error.message ||
-      error.toString();
-    return thunkAPI.rejectWithValue(message);
-  }
-});
-
-//Forgot password
-export const forgotPassword = createAsyncThunk(
-  "auth/forgotPassword",
-  async (email, thunkAPI) => {
-    try {
-      return await authService.forgotPassword(email);
-    } catch (error) {
-      const message = error.response.data.message;
-      return thunkAPI.rejectWithValue(message);
-    }
-  }
-);
-
-//verify email
-export const verifyEmail = createAsyncThunk(
-  "auth/verifyEmail",
-  async (payload, thunkAPI) => {
-    try {
-      return await authService.verifyEmail(payload);
-    } catch (error) {
-      console.log(error.response.data.message);
-      const message =
-        (error.response && error.response.data && response.data.message) ||
-        error.message ||
-        error.toString();
-      return thunkAPI.rejectWithValue(message);
-    }
-  }
-);
-
-//verify email
-export const resetPassword = createAsyncThunk(
-  "auth/resetPassword",
-  async (payload, thunkAPI) => {
-    try {
-      return await authService.resetPassword(payload);
-    } catch (error) {
-      console.log(error.response.data.message);
-      const message =
-        (error.response && error.response.data && response.data.message) ||
-        error.message ||
-        error.toString();
-      return thunkAPI.rejectWithValue(message);
-    }
-  }
-);
-
-export const authSlice = createSlice({
-  name: "auth",
+export const staffSlice = createSlice({
+  name: "staff",
   initialState,
   reducers: {
     reset: (state) => {
@@ -123,10 +176,10 @@ export const authSlice = createSlice({
     builder
       .addCase(register.pending, (state) => {
         state.isLoading = true;
-        isError = false
-        isSuccess = false
-        message = null
-        user = null
+        isError = false;
+        isSuccess = false;
+        message = null;
+        user = null;
       })
       .addCase(register.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -139,97 +192,22 @@ export const authSlice = createSlice({
         state.message = action.payload;
         state.user = null;
       })
-      .addCase(login.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.user = action.payload;
-        state.isError = false;
-      })
-      .addCase(login.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isError = true;
-        state.user = null;
-        state.message = action.payload;
-      })
-      .addCase(login.pending, (state) => {
-        state.isLoading = true;
-        state.message = null;
-        state.isSuccess = false;
-        state.isError = false;
-        state.user = null;
-      })
-      .addCase(logout.fulfilled, (state, action) => (state.user = null))
-      .addCase(getUser.fulfilled, (state) => {
+      .addCase(getAllStaff.fulfilled, (state) => {
         (state.user = action.payload),
           (state.isSuccess = true),
           (state.isLoading = false);
       })
-      .addCase(getUser.pending, (state) => {
+      .addCase(getAllStaff.pending, (state) => {
         state.isLoading = true;
         state.message = null;
         state.isSuccess = false;
         state.isError = false;
       })
-      .addCase(getUser.rejected, (state, action) => {
+      .addCase(getAllStaff.rejected, (state, action) => {
         state.message = action.payload;
-        state.isError = true;
-      })
-      .addCase(forgotPassword.rejected, (state, action) => {
-        state.message = action.payload;
-        state.isError = true;
-      })
-      .addCase(forgotPassword.pending, (state) => {
-        state.isLoading = true;
-        state.message = null;
-        state.isSuccess = false;
-        state.isError = false;
-      })
-      .addCase(forgotPassword.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.user = null;
-        message = action.payload;
-        state.isError = false;
-      })
-      .addCase(verifyEmail.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.user = action.payload;
-        // message = action.payload.message
-        state.isError = false;
-      })
-      .addCase(verifyEmail.pending, (state, action) => {
-        state.isLoading = true;
-        state.isSuccess = false;
-        message = null;
-        state.isError = false;
-      })
-      .addCase(verifyEmail.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = false;
-        message = action.payload;
-        state.isError = true;
-      })
-      .addCase(resetPassword.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.user = action.payload;
-        // message = action.payload.message
-        state.isError = false;
-      })
-      .addCase(resetPassword.pending, (state, action) => {
-        state.isLoading = true;
-        state.isSuccess = false;
-        message = null;
-        state.isError = false;
-      })
-      .addCase(resetPassword.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = false;
-        message = action.payload;
         state.isError = true;
       });
   },
 });
-export const { reset } = authSlice.actions;
-export default authSlice.reducer;
+export const { reset } = staffSlice.actions;
+export default staffSlice.reducer;

@@ -46,7 +46,7 @@ import AvatarPage from "./pages/component/AvatarPage";
 import TooltipPage from "./pages/component/TooltipPage";
 import AccordionPage from "./pages/component/AccordionPage";
 import IconsPage from "./pages/component/IconsPage";
-// import Reservations from "./pages/component/Reservations";
+import Reservations from "./pages/component/Reservations";
 import {store} from './app/store'
 
 function App() {
@@ -81,7 +81,7 @@ function App() {
           <Route path="/utility/empty-state" element={<EmptyState />} />
           <Route path="/staff" element={<Staff />} />
           <Route path="/rooms" element={<Rooms />} />
-          {/* <Route path="/reservations" element={<Reservations />} /> */}
+          <Route path="/reservations" element={<Reservations />} />
           <Route path="/utility/404" element={<PageNotFound />} />
           <Route path="/utility/knowledge-base" element={<KnowledgeBase />} />
           <Route path="/signin" element={<Signin />} />

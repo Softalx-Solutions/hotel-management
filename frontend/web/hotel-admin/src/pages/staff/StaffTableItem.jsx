@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function StaffTableItem(props) {
   return (
@@ -7,7 +7,13 @@ function StaffTableItem(props) {
         <div className="flex items-center">
           <label className="inline-flex">
             <span className="sr-only">Select</span>
-            <input id={props.id} className="form-checkbox" type="checkbox" onChange={props.handleClick} checked={props.isChecked} />
+            <input
+              id={props.id}
+              className="form-checkbox"
+              type="checkbox"
+              onChange={props.handleClick}
+              checked={props.isChecked}
+            />
           </label>
         </div>
       </td>
@@ -22,8 +28,20 @@ function StaffTableItem(props) {
       </td> */}
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
         <div className="flex items-center">
-          <div className="w-10 h-10 shrink-0 mr-2 sm:mr-3">
-            <img className="rounded-full" src={props.image} width="40" height="40" alt={props.name} />
+          <div className="flex items-center justify-center w-10 h-10 shrink-0 mr-2 sm:mr-3">
+            {!props.image ? (
+              <div className="rounded-full bg-purple-200 w-[90%] h-[90%] flex items-center justify-center">
+                <h1>{props.name.slice(0,1)}</h1>
+              </div>
+            ) : (
+              <img
+                className="rounded-full w-[90%] h-[90%]"
+                src={props.image}
+                width="40"
+                height="40"
+                alt={props.name}
+              />
+            )}
           </div>
           <div className="font-medium text-slate-800">{props.name}</div>
         </div>
@@ -41,7 +59,9 @@ function StaffTableItem(props) {
         <div className="text-left font-medium text-sky-500 ">{props.role}</div>
       </td>
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-        <div className="text-left font-medium text-emerald-500">{props.salary}</div>
+        <div className="text-left font-medium text-emerald-500">
+          {props.salary}
+        </div>
       </td>
       <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap w-px">
         {/* Menu button */}

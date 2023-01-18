@@ -6,13 +6,19 @@ import StaffTable from "./StaffTable";
 import { staffList } from "../../data";
 import ModalBasic from "../../components/ModalBasic";
 import { Link } from "react-router-dom";
+import {useSelector} from 'react-redux'
+
+
 
 function Staff() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const [staff, setStaff] = useState([]);
+
+  const { staff } = useSelector(
+    (state) => state.staff
+  );
   useEffect(() => {
-    setStaff(staffList);
+    console.log(staff);
   }, [staff]);
 
   const handleNew = (e) => {

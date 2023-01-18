@@ -41,7 +41,7 @@ export const logout = async () => {
   // }
 };
 
-const getUser = async () => {
+const getAllStaff = async () => {
   // try {
   //   const jsonValue = await AsyncStorage.getItem("@storage_Key");
   //   return jsonValue != null ? JSON.parse(jsonValue) : null;
@@ -96,12 +96,7 @@ const resetPassword = async (userData) => {
 
 const authService = {
   register,
-  login,
-  logout,
-  getUser,
-  forgotPassword,
-  resetPassword,
-  verifyEmail,
+  getAllStaff,
 };
 
 export default authService;
