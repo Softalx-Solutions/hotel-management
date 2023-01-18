@@ -31,7 +31,7 @@ function StaffTableItem(props) {
           <div className="flex items-center justify-center w-10 h-10 shrink-0 mr-2 sm:mr-3">
             {!props.image ? (
               <div className="rounded-full bg-purple-200 w-[90%] h-[90%] flex items-center justify-center">
-                <h1>{props.name.slice(0,1)}</h1>
+                <h1 className="bold">{props.name.slice(0,1)}</h1>
               </div>
             ) : (
               <img
