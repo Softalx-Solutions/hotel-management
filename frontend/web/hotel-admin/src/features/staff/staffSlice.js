@@ -132,23 +132,25 @@ let initialState = {
   message: "",
 };
 
-//Register user
+//Register staff
 export const register = createAsyncThunk(
   "staff/register",
-  async (user, thunkAPI) => {
+  async (staff, thunkAPI) => {
+    console.log("Service: ", "staff");
     try {
-      return await staffService.register(user);
+      return await staffService.register(staff);
     } catch (error) {
+      console.log(error);
       // const message =
       //   (error.response && error.response.data && response.data.message) ||
       //   error.message ||
       //   error.toString();
-      return thunkAPI.rejectWithValue(error.response.data.message);
+      // return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }
 );
 
-export const getAllStaff = createAsyncThunk("staff/user", async (thunkAPI) => {
+export const getAllStaff = createAsyncThunk("staff/staff", async (thunkAPI) => {
   try {
     return await staffService.getAllStaff();
   } catch (error) {
@@ -169,7 +171,16 @@ export const staffSlice = createSlice({
       state.isError = false;
       state.isSuccess = false;
       state.message = "";
-      state.user = null;
+      state.staff = null;
+    },
+    reg: (state, action) => {
+      state.isLoading = false;
+      state.isError = false;
+      state.isSuccess = false;
+      state.message = "";
+      console.log(action.payload);
+      console.log(state.staff);
+      state.staff = [...state.staff, {...action.payload, id: state.staff.length.toString()}];
     },
   },
   extraReducers: (builder) => {
@@ -179,21 +190,21 @@ export const staffSlice = createSlice({
         isError = false;
         isSuccess = false;
         message = null;
-        user = null;
+        staff = null;
       })
       .addCase(register.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.user = action.payload;
+        state.staff = action.payload;
       })
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
-        state.user = null;
+        state.staff = null;
       })
       .addCase(getAllStaff.fulfilled, (state) => {
-        (state.user = action.payload),
+        (state.staff = action.payload),
           (state.isSuccess = true),
           (state.isLoading = false);
       })
@@ -209,5 +220,5 @@ export const staffSlice = createSlice({
       });
   },
 });
-export const { reset } = staffSlice.actions;
+export const { reset, reg } = staffSlice.actions;
 export default staffSlice.reducer;

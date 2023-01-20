@@ -1,7 +1,9 @@
 import axios from "axios";
 
+
 //Register user
-const register = async (userData) => {
+const register = async (payload) => {
+  console.log("Service: ", payload);
   // const response = await axios.post(`${BASE_URL}/register`, userData);
   // if (await response.data) {
   //   try {
@@ -12,7 +14,7 @@ const register = async (userData) => {
   //   }
   // }
 
-  // return response.data;
+  return payload;
 };
 
 //Login user
