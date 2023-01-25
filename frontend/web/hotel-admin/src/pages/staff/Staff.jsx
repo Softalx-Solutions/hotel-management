@@ -3,16 +3,31 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "../../partials/Sidebar";
 import Header from "../../partials/Header";
 import StaffTable from "./StaffTable";
-import { staffList } from "../../data";
 import ModalBasic from "../../components/ModalBasic";
-import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { Formik, Field } from "formik";
+import * as yup from "yup";
+import { register, reg } from "../../features/staff/staffSlice";
+
+const validationSchema = yup.object().shape({
+  name: yup.string().required("Please full name is required!"),
+  email: yup
+    .string()
+    .email("Please enter a valid email!")
+    .required("Email address is required!"),
+  address: yup.string(),
+  role: yup.string(),
+  position: yup.string(),
+  salary: yup.string().required("Enter initial salary"),
+});
 
 function Staff() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const [staff, setStaff] = useState([]);
+  const dispatch = useDispatch();
+  const { staff } = useSelector((state) => state.staff);
   useEffect(() => {
-    setStaff(staffList);
+    //kjdhiasjd
   }, [staff]);
 
   const handleNew = (e) => {
@@ -87,7 +102,10 @@ function Staff() {
                       Please register all your staff or employ if you have none
                       to see the list here.
                     </div>
-                    <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white">
+                    <button
+                      onClick={handleNew}
+                      className="btn bg-indigo-500 hover:bg-indigo-600 text-white"
+                    >
                       <svg
                         className="w-4 h-4 fill-current opacity-50 shrink-0"
                         viewBox="0 0 16 16"
@@ -107,135 +125,154 @@ function Staff() {
           </div>
         </main>
       </div>
-      <ModalBasic
-        id="basic-modal"
-        modalOpen={modalOpen}
-        setModalOpen={setModalOpen}
-        title="" //Place title if you like
+      <Formik
+        onSubmit={(values) => {
+          setModalOpen(false);
+          dispatch(reg({...values, role:'staff'}));
+        }}
+        validationSchema={null}
+        initialValues={{
+          name: "",
+          email: "",
+          address: "",
+          role: "staff",
+          position: "",
+          salary: "",
+        }}
       >
-        {/* Modal content */}
-        <div className="px-1 pt-4 pb-1">
-          <div className="relative md:flex">
-            {/* Content */}
-            <div className="md:w-full">
-              <div className="min-h-[screen/2] h-full flex flex-col after:flex-1">
-                <div className="w-[80%] mx-auto px-2 py-4">
-                  <h1 className="text-3xl text-slate-800 font-bold mb-6">
-                    New Staff ✨
-                  </h1>
-                  {/* Form */}
-                  <form>
-                    <div className="space-y-4">
-                      {/* Full Name */}
-                      <div>
-                        <label
-                          className="block text-sm font-medium mb-1"
-                          htmlFor="name"
-                        >
-                          Full Name <span className="text-rose-500">*</span>
-                        </label>
-                        <input
-                          id="name"
-                          className="form-input w-full"
-                          type="text"
-                        />
-                      </div>
+        {({ errors, handleBlur, handleChange, handleSubmit, values }) => (
+          <ModalBasic
+            id="basic-modal"
+            modalOpen={modalOpen}
+            setModalOpen={setModalOpen}
+            title="" //Place title if you like
+          >
+            {/* Modal content */}
+            <div className="px-1 pt-4 pb-1">
+              <div className="relative md:flex">
+                {/* Content */}
+                <div className="md:w-full">
+                  <div className="min-h-[screen/2] h-full flex flex-col after:flex-1">
+                    <div className="w-[80%] mx-auto px-2 py-4">
+                      <h1 className="text-3xl text-slate-800 font-bold mb-6">
+                        New Staff ✨
+                      </h1>
+                      {/* Form */}
+                      <div className="space-y-4">
+                        {/* Full Name */}
+                        <div>
+                          <label
+                            className="block text-sm font-medium mb-1"
+                            htmlFor="name"
+                          >
+                            Full Name <span className="text-rose-500">*</span>
+                          </label>
+                          <input
+                            id="name"
+                            onBlur={handleBlur("name")}
+                            onChange={handleChange("name")}
+                            className="form-input w-full"
+                            type="text"
+                          />
+                          <span className="text-rose-500">{errors.name}</span>
+                        </div>
 
-                      <div>
-                        <label
-                          className="block text-sm font-medium mb-1"
-                          htmlFor="email"
-                        >
-                          Email Address <span className="text-rose-500">*</span>
-                        </label>
-                        <input
-                          id="email"
-                          className="form-input w-full"
-                          type="email"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          className="block text-sm font-medium mb-1"
-                          htmlFor="role"
-                        >
-                          Role <span className="text-rose-500">*</span>
-                        </label>
-                        <select id="role" className="form-select w-full">
-                          <option>Cook</option>
-                          <option>Receptionist</option>
-                          <option>Accountant</option>
-                        </select>
-                      </div>
-                      {/* Initial salary */}
-                      <div>
-                        <label
-                          className="block text-sm font-medium mb-1"
-                          htmlFor="salary"
-                        >
-                          Initial salary <span className="text-rose-500">*</span>
-                        </label>
-                        <input
-                          id="salary"
-                          className="form-input w-full"
-                          type="number"
-                        />
-                      </div>
-                      {/* Initial Salary end */}
-                      {/* Address start */}
-                      <div>
-                        <label
-                          className="block text-sm font-medium mb-1"
-                          htmlFor="address"
-                        >
-                          Address <span className="text-rose-500">*</span>
-                        </label>
-                        <input
-                          id="address"
-                          className="form-input w-full"
-                          type="text"
-                        />
-                      </div>
-                      {/* Address end */}
-                      <div>
-                        <label
-                          className="block text-sm font-medium mb-1"
-                          htmlFor="password"
-                        >
-                          Password
-                        </label>
-                        <input
-                          id="password"
-                          className="form-input w-full"
-                          type="password"
-                          autoComplete="on"
-                        />
+                        <div>
+                          <label
+                            className="block text-sm font-medium mb-1"
+                            htmlFor="email"
+                          >
+                            Email Address{" "}
+                            <span className="text-rose-500">*</span>
+                          </label>
+                          <input
+                            onBlur={handleBlur("email")}
+                            onChange={handleChange("email")}
+                            id="email"
+                            className="form-input w-full"
+                            type="email"
+                          />
+                          <span className="text-rose-500">{errors.email}</span>
+                        </div>
+                        <div>
+                          <label
+                            className="block text-sm font-medium mb-1"
+                            htmlFor="role"
+                          >
+                            Position
+                          </label>
+                          <Field
+                          component='select'
+                            id="position"
+                            name='position'
+                            className="form-select w-full"
+                          >
+                            <option>Select role</option>
+                            <option>Cook</option>
+                            <option>Receptionist</option>
+                            <option>Accountant</option>
+                          </Field>
+                        </div>
+                        {/* Initial salary */}
+                        <div>
+                          <label
+                            className="block text-sm font-medium mb-1"
+                            htmlFor="salary"
+                          >
+                            Initial salary{" "}
+                            <span className="text-rose-500">*</span>
+                          </label>
+                          <input
+                            id="salary"
+                            onBlur={handleBlur("salary")}
+                            onChange={handleChange("salary")}
+                            className="form-input w-full"
+                            type="number"
+                          />
+                          <span className="text-rose-500">{errors.salary}</span>
+                        </div>
+                        {/* Initial Salary end */}
+                        {/* Address start */}
+                        <div>
+                          <label
+                            className="block text-sm font-medium mb-1"
+                            htmlFor="address"
+                          >
+                            Address
+                          </label>
+                          <Field className="form-input w-full" component={'textarea'} type="text" name="address" />
+                        </div>
+                        {/* Address end */}
                       </div>
                     </div>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        {/* Modal footer */}
-        <div className="px-5 py-4">
-          <div className="flex flex-wrap justify-end space-x-2">
-            <button
-              className="btn-sm border-slate-200 hover:border-slate-300 text-slate-600"
-              onClick={(e) => {
-                e.stopPropagation();
-                setModalOpen(false);
-              }}
-            >
-              Cancel
-            </button>
-            <button className="btn-sm bg-indigo-500 hover:bg-indigo-600 text-white">
-              Create
-            </button>
-          </div>
-        </div>
-      </ModalBasic>
+            {/* Modal footer */}
+            <div className="px-5 py-4">
+              <div className="flex flex-wrap justify-end space-x-2">
+                <button
+                  className="btn-sm border-slate-200 hover:border-slate-300 text-slate-600"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setModalOpen(false);
+                  }}
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  onClick={handleSubmit}
+                  className="btn-sm bg-indigo-500 hover:bg-indigo-600 text-white"
+                >
+                  Create
+                </button>
+              </div>
+            </div>
+          </ModalBasic>
+        )}
+      </Formik>
     </div>
   );
 }

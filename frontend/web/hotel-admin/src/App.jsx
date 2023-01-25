@@ -46,7 +46,6 @@ import AvatarPage from "./pages/component/AvatarPage";
 import TooltipPage from "./pages/component/TooltipPage";
 import AccordionPage from "./pages/component/AccordionPage";
 import IconsPage from "./pages/component/IconsPage";
-// import Reservations from "./pages/component/Reservations";
 
 
 import Home from './Home';
@@ -92,6 +91,7 @@ function App() {
           <Route path="/utility/empty-state" element={<EmptyState />} />
           <Route path="/staff" element={<Staff />} />
           <Route path="/rooms" element={<Rooms />} />
+
           <Route path="/utility/404" element={<PageNotFound />} />
           <Route path="/utility/knowledge-base" element={<KnowledgeBase />} />
           <Route path="/signin" element={<Signin />} />
@@ -121,9 +121,9 @@ function App() {
 
         <Route path="/reception" element={<Home />} />
         <Route path="/new-reservation" element={<NewReservation />} />
+        <Route path="/reservations" element={<Reservations />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/preview-invoice" element={<PreviewInvoice />} />
-        <Route path="/reservations" element={< Reservations />} />
         <Route path="/new-reservation/order-success" element={<OrderSuccess />} />
 
         </Routes>

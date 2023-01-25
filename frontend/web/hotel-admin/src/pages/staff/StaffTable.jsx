@@ -13,11 +13,11 @@ function StaffTable({
   const [selectAll, setSelectAll] = useState(false);
   const [isCheck, setIsCheck] = useState([]);
   const [list, setList] = useState([]);
-
+  // const { staff } = useSelector((state) => state.staff);
   useEffect(() => {
     setList(staff);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [staff]);
 
   const handleSelectAll = () => {
     setSelectAll(!selectAll);
@@ -78,7 +78,7 @@ function StaffTable({
                   <div className="font-semibold text-left">Role</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                  <div className="font-semibold text-left">Salary</div>
+                  <div clavaluesssName="font-semibold text-left">Salary</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
                   <span className="sr-only">Menu</span>
