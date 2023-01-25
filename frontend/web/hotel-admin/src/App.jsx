@@ -47,9 +47,20 @@ import TooltipPage from "./pages/component/TooltipPage";
 import AccordionPage from "./pages/component/AccordionPage";
 import IconsPage from "./pages/component/IconsPage";
 // import Reservations from "./pages/component/Reservations";
+
+
+import Home from './Home';
+import PreviewInvoice from './pages/PreviewInvoice';
+import NewReservation from './pages/component/NewReservation';
+import OrderSuccess from './partials/OrderSuccess';
+import Reservations from './pages/component/Reservations';
+
+
+
 import {store} from './app/store'
 
 function App() {
+
   const location = useLocation();
 
   useEffect(() => {
@@ -81,7 +92,6 @@ function App() {
           <Route path="/utility/empty-state" element={<EmptyState />} />
           <Route path="/staff" element={<Staff />} />
           <Route path="/rooms" element={<Rooms />} />
-          {/* <Route path="/reservations" element={<Reservations />} /> */}
           <Route path="/utility/404" element={<PageNotFound />} />
           <Route path="/utility/knowledge-base" element={<KnowledgeBase />} />
           <Route path="/signin" element={<Signin />} />
@@ -105,6 +115,17 @@ function App() {
           <Route path="/component/accordion" element={<AccordionPage />} />
           <Route path="/component/icons" element={<IconsPage />} />
           <Route path="*" element={<PageNotFound />} />
+
+
+
+
+        <Route path="/reception" element={<Home />} />
+        <Route path="/new-reservation" element={<NewReservation />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/preview-invoice" element={<PreviewInvoice />} />
+        <Route path="/reservations" element={< Reservations />} />
+        <Route path="/new-reservation/order-success" element={<OrderSuccess />} />
+
         </Routes>
       </Provider>
     </>
