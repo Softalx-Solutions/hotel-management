@@ -1,0 +1,29 @@
+{
+    "users":[
+        {
+            "id":3,
+            "name":"Oke Edafe Great",
+            "age": 45
+        },
+        {
+            "id":2,
+            "name":"Oke Edafe Great",
+            "age": 13
+        },
+        {
+            "id":1,
+            "name":"Oke Edafe Great",
+            "age": 4
+        }
+    ],
+    "hotels":[
+        {
+            "id":1,
+            "name":"Ogees Kitchen"
+        },
+        {
+            "id":2,
+            "name":"Ogees Locke"
+        }
+    ]
+}
